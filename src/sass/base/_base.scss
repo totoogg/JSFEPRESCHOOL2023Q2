@@ -1,24 +1,48 @@
-html {
-  font-size: 10px;
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  @extend %transition;
+}
+
+html {
+  font-size: 10px;
+  scroll-behavior: smooth;
 }
 
 body {
-  @extend %font-headline;
-  @include font($size: 1.6rem, $height: 2.6rem, $weight: normal);
+  width: 1440px;
+  @extend %font-text;
+  @include font($size: 2rem, $height: 4rem);
+  color: $color-text;
+  margin: 0 auto;
 }
 
 h1 {
-  @extend %font-text;
-  @include font($height: 5.4rem, $size: 4.4rem);
+  @extend %font-headline;
+  @include font ($size: 3rem, $height: 5rem);
+  color: $color-light;
 }
 
 h2 {
-  @include font($size: 3.4rem, $height: 4.6rem);
+  @extend %font-headline;
+  @include font ($size: 4rem, $height: 4rem);
+  color: $color-background;
 }
 
 h3 {
-  @include font($size: 2.4rem, $height: 3.4rem);
+  @extend %font-headline;
+  @include font ($size: 2rem, $height: 4rem);
+  color: $color-background;
+}
+
+.wrapper {
+  width: $content-width;
+  margin: 0 auto;
+}
+
+.text {
+  @extend %font-headline;
+  @include font ($size: 4rem, $height: 5rem);
+  color: $color-light;
 }

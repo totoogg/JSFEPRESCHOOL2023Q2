@@ -13,26 +13,32 @@
       <div class="header__logo">
         <h1 class="logo">Brooklyn Public Library</h1>
       </div>
-      <nav class="header__navigation">
-        <ul class="navigation">
-          <li class="navigation__item"><a href="#" class="navigation__item__link">About</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__item__link">Favorites</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__item__link">Coffee shop</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__item__link">Contacts</a></li>
-          <li class="navigation__item"><a href="#" class="navigation__item__link">Library Card</a></li>
-        </ul>
-      </nav>
-      <div class="header__profile">
-        <img class="profile-icon" src="src/img/icons/icon_profile.svg" alt="profile">
+      <div class="header__content">
+        <nav class="header__navigation">
+          <ul class="navigation">
+            <li class="navigation__item"><a href="#about" class="navigation__item__link">About</a></li>
+            <li class="navigation__item"><a href="#favorites" class="navigation__item__link">Favorites</a></li>
+            <li class="navigation__item"><a href="#coffee-shop" class="navigation__item__link">Coffee shop</a></li>
+            <li class="navigation__item"><a href="#contacts" class="navigation__item__link">Contacts</a></li>
+            <li class="navigation__item"><a href="#library-card" class="navigation__item__link">Library Card</a></li>
+          </ul>
+        </nav>
+        <div class="header__profile">
+          <img class="profile-icon" src="src/img/icons/icon_profile.svg" alt="profile">
+        </div>
       </div>
     </div>
   </header>
   <main class="main">
-    <div class="wrapper main__wrapper">
-      <section class="welcome">
-        <h3 class="welcome__text">Welcome to the Brooklyn Library</h3>
-      </section>
-      <section class="about">
+    <section class="welcome">
+      <div class="welcome__text">
+        <p class="text">WELCOME</p>
+        <p class="text">TO THE BROOKLYN</p>
+        <p class="text">LIBRARY</p>
+      </div>
+    </section>
+    <section class="about" id="about">
+      <div class="wrapper">
         <h2 class="headline"></h2>
         <p class="description">The Brooklyn Library is a free workspace, a large number of books and a cozy coffee shop inside</p>
         <div class="slider">
@@ -49,8 +55,10 @@
             <div class="radio" value="3"></div>
           </div>
         </div>
-      </section>
-      <section class="favorites">
+      </div>
+    </section>
+    <section class="favorites" id="favorites">
+      <div class="wrapper">
         <h2 class="headline">Favorites</h2>
         <p class="description">Pick favorites of season</p>
         <div class="favorites__radio">
@@ -174,8 +182,10 @@
             <button class="card__button">Buy</button>
             <img src="src/img/favorites/autumn4.jpg" alt="skin" class="card__book-skin"></div>
         </div>
-      </section>
-      <section class="coffee-shop">
+      </div>
+    </section>
+    <section class="coffee-shop" id="coffee-shop">
+      <div class="wrapper">
         <h2 class="headline">Coffee shop</h2>
         <p class="description">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
         <div class="coffe-shop__menu">
@@ -222,8 +232,10 @@
             </div>
           </div>
         </div>
-      </section>
-      <section class="contacts">
+      </div>
+    </section>
+    <section class="contacts" id="contacts">
+      <div class="wrapper">
         <h2 class="headline">Our Contacts</h2>
         <div class="contacts__text">
           <h3 class="contacts__text__address">For all Library inquiries:</h3>
@@ -234,32 +246,36 @@
           <p class="director__library">Library Director: <a href="mailto:AmandaHirst@gmail.com" class="director__mail">Amanda Hirst</a></p>
         </div>
         <div class="contacts__map">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1069.5021789554285!2d-73.9921311438605!3d40.69580002915306!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a49b649b8c3%3A0x6342a2291cea2e!2zMjg2IENhZG1hbiBQbGF6YSBXLCBCcm9va2x5biwgTlkgMTEyMDEsINCh0KjQkA!5e0!3m2!1sru!2str!4v1689102186763!5m2!1sru!2str" width="696" height="414" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          <img src="src/img/map/map.jpg" alt="map">
         </div>
-      </section>
-      <section class="library-card">
+      </div>
+    </section>
+    <section class="library-card" id="library-card">
+      <div class="wrapper">
         <h2 class="headline">Digital Library Cards</h2>
-        <div class="digital-card">
-          <h3 class="digital-card__headline">Find your Library card</h3>
-          <form action="#" method="post" class="library-form">
-            <div class="library-form__container">
-              <h3 class="form-headline">Brooklyn Public Library</h3>
-              <input type="text" name="reader" class="form__reader-name" placeholder="Reader's name " pattern="[-A-Za-z0-9]+">
-              <input type="text" name="number-card" class="form__number-card" placeholder="Card number" pattern="[-A-Za-z0-9]+">
+        <div class="library-card__content">
+          <div class="digital-card">
+            <h3 class="digital-card__headline">Find your Library card</h3>
+            <form action="#" method="post" class="library-form">
+              <div class="library-form__container">
+                <h3 class="form-headline">Brooklyn Public Library</h3>
+                <input type="text" name="reader" class="form__reader-name" placeholder="Reader's name " pattern="[-A-Za-z0-9]+">
+                <input type="text" name="number-card" class="form__number-card" placeholder="Card number" pattern="[-A-Za-z0-9]+">
+              </div>
+              <button class="form-button">Check the card</button>
+            </form>
+          </div>
+          <div class="get-digital-card">
+            <h3 class="get-digital-card__headline">Get a reader card</h3>
+            <p class="get-digital-card__text">You will be able to see a reader card after logging into account or you can register a new account</p>
+            <div class="get-digital-card__buttons">
+              <button class="get-digital-card__buttons__sing-up">Sign Up</button>
+              <button class="get-digital-card__buttons__log-in">Log in</button>
             </div>
-            <button class="form-button">Check the card</button>
-          </form>
-        </div>
-        <div class="get-digital-card">
-          <h3 class="get-digital-card__headline">Get a reader card</h3>
-          <p class="get-digital-card__text">You will be able to see a reader card after logging into account or you can register a new account</p>
-          <div class="get-digital-card__buttons">
-            <button class="get-digital-card__buttons__sing-up">Sign Up</button>
-            <button class="get-digital-card__buttons__log-in">Log in</button>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   </main>
   <footer class="footer">
     <div class="wrapper footer__wrapper">
