@@ -6,8 +6,12 @@
   font-family: "Forum", serif;
 }
 
-.header .header__wrapper .header__content .navigation .navigation__item__link, body {
+.favorites__content__cards .card__button, .header .header__wrapper .header__content .navigation .navigation__item__link, body {
   font-family: "Inter", sans-serif;
+}
+
+.favorites__content .display-none, .favorites__radio .radio__content input[type=radio] {
+  display: none;
 }
 
 * {
@@ -37,6 +41,7 @@ h1 {
   font-weight: normal;
   line-height: 5rem;
   color: #FFFFFF;
+  letter-spacing: 0.6px;
 }
 
 h2 {
@@ -45,6 +50,7 @@ h2 {
   font-weight: normal;
   line-height: 4rem;
   color: #0C0C0E;
+  letter-spacing: 2px;
 }
 
 h3 {
@@ -66,6 +72,7 @@ h3 {
   font-weight: normal;
   line-height: 5rem;
   color: #FFFFFF;
+  letter-spacing: 3px;
 }
 
 .header {
@@ -170,13 +177,14 @@ h3 {
   display: flex;
   justify-content: space-between;
   width: 2350px;
+  height: 560px;
   margin-bottom: 35px;
 }
 .slider .slider__radio {
   width: 78px;
   height: 26px;
   margin: 0 auto;
-  margin-bottom: 55px;
+  margin-bottom: 35px;
   display: flex;
   justify-content: space-between;
 }
@@ -196,6 +204,132 @@ h3 {
 }
 .slider .slider__radio .radio .checked {
   background: #BB945F;
+}
+
+.description__bold {
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.favorites__radio {
+  margin-bottom: 40px;
+  width: 700px;
+  height: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.favorites__radio .radio__content {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.favorites__radio .radio__content label {
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+.favorites__radio .radio__content label::before {
+  content: "";
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  position: absolute;
+  left: -37px;
+  top: 12px;
+  background: url(../img/radio/radio.svg) 0 0 no-repeat;
+}
+.favorites__radio .radio__content input[type=radio]:checked + label:before {
+  background: url(../img/radio/radio-checked.svg) 0 0 no-repeat;
+}
+.favorites__radio .radio__content input[type=radio]:checked + label {
+  font-weight: bold;
+}
+.favorites__radio .radio__content label:hover::before {
+  background: url(../img/radio/radio-checked.svg) 0 0 no-repeat;
+}
+.favorites__radio .radio__content label:hover {
+  font-weight: bold;
+}
+.favorites__radio .value-1 {
+  width: 104px;
+}
+.favorites__radio .value-2 {
+  width: 99px;
+}
+.favorites__radio .value-3 {
+  width: 116px;
+}
+.favorites__radio .value-4 {
+  width: 111px;
+}
+
+.favorites__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.favorites__content__cards {
+  position: relative;
+  width: 550px;
+  height: 555px;
+  border: 1px solid #000000;
+  margin-bottom: 40px;
+  margin-right: 40px;
+  padding: 15px 20px;
+}
+.favorites__content__cards .card__headline {
+  position: relative;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+}
+.favorites__content__cards .card__headline::after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  border: 1px solid #BB945F;
+  left: 0;
+  bottom: 0;
+}
+.favorites__content__cards .card__header-bold {
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.favorites__content__cards .card__header-bold:nth-child(2) {
+  text-transform: uppercase;
+}
+.favorites__content__cards .card__header-bold:nth-child(3) {
+  margin-bottom: 20px;
+}
+.favorites__content__cards .card__description {
+  width: 355px;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.favorites__content__cards .card__button {
+  position: absolute;
+  bottom: 15px;
+  width: 75px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  background: #FFFFFF;
+  cursor: pointer;
+  color: #0C0C0E;
+  text-align: center;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.favorites__content__cards .card__button:disabled {
+  cursor: auto;
+  color: #BB945F;
+  border: 1px solid #BB945F;
+}
+.favorites__content__cards .card__book-skin {
+  position: absolute;
+  bottom: -1px;
+  left: 390px;
 }
 
 /*# sourceMappingURL=style.css.map */
