@@ -424,6 +424,7 @@ h3 {
 .contacts__content {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 .contacts__content .contacts__text__address {
   font-weight: bold;
@@ -463,6 +464,152 @@ h3 {
 }
 .contacts__content .director__library .director__mail:hover {
   color: #BB945F;
+}
+
+.library-card {
+  margin-bottom: 40px;
+}
+.library-card .library-card__content {
+  display: flex;
+  justify-content: space-between;
+}
+.library-card .library-card__content .digital-card {
+  width: 600px;
+}
+.library-card .library-card__content .digital-card .digital-card__headline {
+  font-family: Inter;
+  font-size: 30px;
+  letter-spacing: 0.6px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+.library-card .library-card__content .digital-card .library-form {
+  padding-top: 20px;
+  width: 600px;
+  border: 3px solid #BB945F;
+  box-shadow: 1px 5px 5px #8E8E8E;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container {
+  width: 560px;
+  background: #BB945F;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 20px 0px 20px;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form-headline {
+  font-family: Forum;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  margin-bottom: 20px;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form__reader-name {
+  width: 520px;
+  border-radius: 10px;
+  border: none;
+  margin-bottom: 25px;
+  font-family: Forum;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  padding: 8px 0px 8px 20px;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form__reader-name:hover {
+  outline: 10px solid #BB945F;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form__reader-name::placeholder {
+  color: #8E8E8E;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form__reader-name:focus {
+  outline-color: #BB945F;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form__number-card {
+  width: 520px;
+  border-radius: 10px;
+  border: none;
+  font-family: Forum;
+  font-size: 30px;
+  line-height: 50px;
+  letter-spacing: 0.6px;
+  padding: 8px 0px 8px 20px;
+  margin-bottom: 25px;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form__number-card:hover {
+  outline: 10px solid #BB945F;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form__number-card::placeholder {
+  color: #8E8E8E;
+}
+.library-card .library-card__content .digital-card .library-form .library-form__container .form__number-card:focus {
+  outline-color: #BB945F;
+}
+.library-card .library-card__content .digital-card .library-form .form-button {
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  background: #FFFFFF;
+  height: 44px;
+  width: 242px;
+  font-family: Inter;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: bold;
+  letter-spacing: 1px;
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+.library-card .library-card__content .digital-card .library-form .form-button:hover {
+  color: #0C0C0E;
+  background: #BB945F;
+  border: 1px solid #BB945F;
+}
+.library-card .library-card__content .get-digital-card {
+  width: 456px;
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.library-card .library-card__content .get-digital-card .get-digital-card__headline {
+  margin-bottom: 35px;
+  font-family: Forum;
+  font-size: 30px;
+  letter-spacing: 0.6px;
+}
+.library-card .library-card__content .get-digital-card .get-digital-card__text {
+  margin-bottom: 35px;
+  font-family: Inter;
+  font-size: 20px;
+  line-height: 40px;
+  letter-spacing: 0.4px;
+}
+.library-card .library-card__content .get-digital-card .get-digital-card__buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 170px;
+}
+.library-card .library-card__content .get-digital-card .get-digital-card__buttons .get-digital-card__buttons__link {
+  width: 75px;
+  height: 30px;
+  color: #0C0C0E;
+  font-family: Inter;
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  background: #FFFFFF;
+  text-align: center;
+  cursor: pointer;
+}
+.library-card .library-card__content .get-digital-card .get-digital-card__buttons .get-digital-card__buttons__link:hover {
+  color: #0C0C0E;
+  background: #BB945F;
+  border: 1px solid #BB945F;
 }
 
 .footer {
