@@ -6,7 +6,7 @@
   font-family: "Forum", serif;
 }
 
-.favorites__content__cards .card__button, .header .header__wrapper .header__content .navigation .navigation__item__link, body {
+.contacts__content .contacts__text__director, .contacts__content .contacts__text__address, .favorites__content__cards .card__button, .header .header__wrapper .header__content .navigation .navigation__item__link, body {
   font-family: "Inter", sans-serif;
 }
 
@@ -368,6 +368,7 @@ h3 {
 .coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .menu__names .menu__position {
   margin-bottom: 40px;
   letter-spacing: 2px;
+  text-transform: capitalize;
 }
 .coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .menu__costs {
   display: flex;
@@ -414,6 +415,54 @@ h3 {
 }
 .coffee-shop .coffee-shop__menu .desert__menu .desert {
   text-align: right;
+}
+
+.our__contacts {
+  margin-top: 20px;
+}
+
+.contacts__content {
+  display: flex;
+  justify-content: space-between;
+}
+.contacts__content .contacts__text__address {
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-bottom: 40px;
+}
+.contacts__content .address {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.contacts__content .address .address_tel {
+  text-decoration: none;
+  color: #000000;
+}
+.contacts__content .address .address_tel:hover {
+  color: #BB945F;
+}
+.contacts__content .address:nth-child(4) {
+  margin-bottom: 40px;
+}
+.contacts__content .contacts__text__director {
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.contacts__content .director__library {
+  letter-spacing: 2px;
+  text-transform: capitalize;
+}
+.contacts__content .director__library .director__mail {
+  text-decoration: none;
+  color: #000000;
+  font-weight: bold;
+}
+.contacts__content .director__library .director__mail:hover {
+  color: #BB945F;
 }
 
 /*# sourceMappingURL=style.css.map */
