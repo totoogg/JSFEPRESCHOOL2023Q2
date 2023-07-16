@@ -326,10 +326,94 @@ h3 {
   color: #BB945F;
   border: 1px solid #BB945F;
 }
+.favorites__content__cards .card__button:hover {
+  color: #0C0C0E;
+  background: #BB945F;
+  border: 1px solid #BB945F;
+}
+.favorites__content__cards .button-own:hover {
+  cursor: auto;
+  color: #BB945F;
+  background: #FFFFFF;
+  border: 1px solid #BB945F;
+}
 .favorites__content__cards .card__book-skin {
   position: absolute;
   bottom: -1px;
   left: 390px;
+}
+.coffee-shop {
+  margin-top: 20px;
+}
+.coffee-shop .description {
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+}
+.coffee-shop .coffee-shop__menu {
+  display: flex;
+  justify-content: space-between;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats {
+  width: 438px;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu {
+  display: flex;
+  justify-content: space-between;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .menu__names {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .menu__names .menu__position {
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .menu__costs {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .cost {
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  position: relative;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .cost::before {
+  content: "";
+  position: absolute;
+  border: 1px solid #BB945F;
+  width: 100px;
+  left: -540%;
+  top: 50%;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .cost__desert {
+  margin-bottom: 40px;
+  letter-spacing: 2px;
+  position: relative;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .menu .cost__desert::before {
+  content: "";
+  position: absolute;
+  border: 1px solid #BB945F;
+  width: 100px;
+  left: -391%;
+  top: 50%;
+}
+.coffee-shop .coffee-shop__menu .coffee-shop__menu__eats .headline-menu {
+  font-size: 40px;
+  letter-spacing: 2px;
+  color: #BB945F;
+  margin-bottom: 40px;
+}
+.coffee-shop .coffee-shop__menu .desert__menu {
+  width: 482px;
+}
+.coffee-shop .coffee-shop__menu .desert__menu .headline__desert {
+  text-align: right;
+}
+.coffee-shop .coffee-shop__menu .desert__menu .desert {
+  text-align: right;
 }
 
 /*# sourceMappingURL=style.css.map */

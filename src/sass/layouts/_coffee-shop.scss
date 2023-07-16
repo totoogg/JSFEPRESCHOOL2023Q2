@@ -1,0 +1,88 @@
+.coffee-shop {
+  margin-top: 20px;
+
+  .description {
+    letter-spacing: 2px;
+    margin-bottom: 40px;
+  }
+
+  .coffee-shop__menu {
+    display: flex;
+    justify-content: space-between;
+
+    .coffee-shop__menu__eats {
+      width: 438px;
+
+      .menu {
+        display: flex;
+        justify-content: space-between;
+
+        .menu__names {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+
+          .menu__position {
+            margin-bottom: 40px;
+            letter-spacing: 2px;
+          }
+        }
+
+        .menu__costs {
+          display: flex;
+          justify-content: space-between;
+          flex-direction: column;
+        }
+        
+        .cost {
+          margin-bottom: 40px;
+          letter-spacing: 2px;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            border: 1px solid $color-link;
+            width: 100px;
+            left: -540%;
+            top: 50%;
+          }
+        }
+
+        .cost__desert {
+          margin-bottom: 40px;
+          letter-spacing: 2px;
+          position: relative;
+
+          &::before {
+            content: "";
+            position: absolute;
+            border: 1px solid $color-link;
+            width: 100px;
+            left: -391%;
+            top: 50%;
+          }
+        }
+      }
+
+      .headline-menu {
+        font-size: 40px;
+        letter-spacing: 2px;
+        color: $color-link;
+        margin-bottom: 40px;
+      }
+    }
+
+    .desert__menu {
+      width: 482px;
+
+      .headline__desert {
+        text-align: right;
+      }
+
+      .desert {
+        text-align: right;
+      }
+    }
+  }
+}
