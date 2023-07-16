@@ -43,7 +43,7 @@
           &::before {
             content: "";
             position: absolute;
-            border: 1px solid $color-link;
+            border-bottom: 1px solid $color-link;
             width: 100px;
             left: -540%;
             top: 50%;
@@ -58,7 +58,7 @@
           &::before {
             content: "";
             position: absolute;
-            border: 1px solid $color-link;
+            border-bottom: 1px solid $color-link;
             width: 100px;
             left: -391%;
             top: 50%;
