@@ -11,7 +11,7 @@ html {
 }
 
 body {
-  width: 1440px;
+  width: 100%;
   @extend %font-text;
   @include font($size: 2rem, $height: 4rem);
   color: $color-text;
@@ -43,7 +43,7 @@ h3 {
   margin: 0 auto;
 }
 
-.text {
+.welcome__text {
   @extend %font-headline;
   @include font ($size: 4rem, $height: 5rem);
   color: $color-light;

@@ -2,7 +2,7 @@
   transition: all 0.3s ease-out;
 }
 
-.text, h3, h2, h1 {
+.welcome__text, h3, h2, h1 {
   font-family: "Forum", serif;
 }
 
@@ -26,7 +26,7 @@ html {
 }
 
 body {
-  width: 1440px;
+  width: 100%;
   font-size: 2rem;
   font-style: normal;
   font-weight: normal;
@@ -66,7 +66,7 @@ h3 {
   margin: 0 auto;
 }
 
-.text {
+.welcome__text {
   font-size: 4rem;
   font-style: normal;
   font-weight: normal;
