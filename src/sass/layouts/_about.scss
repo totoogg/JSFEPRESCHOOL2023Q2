@@ -1,0 +1,63 @@
+.headline {
+  margin: 0 auto;
+  margin-top: 20px;
+  margin-bottom: 61px;
+  text-align: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: $color-placeholder;
+    width: 50px;
+    height: 1px;
+    bottom: -20px;
+    left: calc(50% - 25px);
+  }
+}
+
+.description {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.slider {
+  overflow: hidden;
+
+  .slider__content {
+    display: flex;
+    justify-content: space-between;
+    width: 2350px;
+    height: 560px;
+    margin-bottom: 35px;
+  }
+
+  .slider__radio {
+    width: 78px;
+    height: 26px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+    display: flex;
+    justify-content: space-between;
+
+    .radio {
+      width: 26px;
+      height: 26px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .radio__circle {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        background: $color-background;
+      }
+
+      .checked {
+        background: $color-link;
+      }
+    }
+  }
+}
