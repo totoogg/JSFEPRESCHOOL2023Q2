@@ -2,10 +2,11 @@
   position: relative;
   background-image: url("../img/background/welcome.png");
   background-size: 1440px;
-  background-position: 0 50%;
+  background-position: 50% 50%;
   background-repeat: no-repeat;
   height: 600px;
   padding-top: 220px;
+  z-index: 1;
   
   &::before {
     content: '';
