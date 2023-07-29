@@ -16,17 +16,17 @@
     align-items: center;
     
 
-    & input[type=radio] {
+    input[type=radio] {
       @extend %display-none;
     }
 
-    & label {
+    label {
       display: inline-block;
       cursor: pointer;
       position: relative;
     }
 
-    & label::before {
+    label::before {
       content: "";
       display: inline-block;
       width: 17px;
@@ -37,19 +37,19 @@
       background: url(../img/radio/radio.svg) 0 0 no-repeat;
     }
 
-    & input[type=radio]:checked + label:before {
+    input[type=radio]:checked + label:before {
       background: url(../img/radio/radio-checked.svg) 0 0 no-repeat;
     }
 
-    & input[type=radio]:checked + label {
+    input[type=radio]:checked + label {
       font-weight: bold;
     }
 
-    & label:hover::before {
+    label:hover::before {
       background: url(../img/radio/radio-checked.svg) 0 0 no-repeat;
     }
 
-    & label:hover {
+    label:hover {
       font-weight: bold;
     }
   }
@@ -76,7 +76,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
 
-  &__cards {
+  .favorites__content__cards {
     position: relative;
     width: 550px;
     height: 555px;
