@@ -9,6 +9,7 @@
   .coffee-shop__menu {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     .coffee-shop__menu__eats {
       width: 438px;
@@ -67,7 +68,7 @@
       }
 
       .headline-menu {
-        font-size: 40px;
+        font-size: 4rem;
         letter-spacing: 2px;
         color: $color-link;
         margin-bottom: 40px;

@@ -5,7 +5,7 @@
 
 .favorites__radio {
   margin-bottom: 40px;
-  width: 700px;
+  max-width: 700px;
   height: 24px;
   display: flex;
   justify-content: space-between;
@@ -101,7 +101,7 @@
     }
 
     .card__header-bold {
-      font-size: 15px;
+      font-size: 1.5rem;
       font-weight: bold;
       letter-spacing: 2px;
     }
@@ -116,7 +116,7 @@
 
     .card__description {
       width: 355px;
-      font-size: 15px;
+      font-size: 1.5rem;
       letter-spacing: 2px;
     }
 
@@ -132,7 +132,7 @@
       color: $color-background;
       text-align: center;
       @extend %font-text;
-      font-size: 10px;
+      font-size: 1rem;
       font-weight: bold;
       letter-spacing: 1px;
 

@@ -27,18 +27,21 @@
   .slider__content {
     display: flex;
     justify-content: space-between;
-    width: 2350px;
+    width: 167.86%;
     height: 560px;
     margin-bottom: 35px;
+
+    .slider__image {
+      width: 19.15%;
+    }
   }
 
   .slider__radio {
-    width: 78px;
     height: 26px;
     margin: 0 auto;
     margin-bottom: 35px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     .radio {
       width: 26px;
@@ -58,6 +61,10 @@
       .checked {
         background: $color-link;
       }
+    }
+
+    .display-none {
+      display: none;
     }
   }
 }

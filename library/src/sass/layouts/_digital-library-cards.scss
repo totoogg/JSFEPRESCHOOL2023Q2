@@ -4,13 +4,14 @@
   .library-card__content {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 
     .digital-card {
       width: 600px;
 
       .digital-card__headline {
         font-family: Inter;
-        font-size: 30px;
+        font-size: 3rem;
         letter-spacing: 0.6px;
         text-align: center;
         margin-bottom: 30px;
@@ -35,9 +36,9 @@
 
           .form-headline {
             font-family: Forum;
-            font-size: 30px;
+            font-size: 3rem;
             font-weight: 400;
-            line-height: 50px;
+            line-height: 5rem;
             letter-spacing: 0.6px;
             margin-bottom: 20px;
           }
@@ -48,8 +49,8 @@
             border: none;
             margin-bottom: 25px;
             font-family: Forum;
-            font-size: 30px;
-            line-height: 50px;
+            font-size: 3rem;
+            line-height: 5rem;
             letter-spacing: 0.6px;
             padding: 8px 0px 8px 20px;
 
@@ -71,8 +72,8 @@
             border-radius: 10px;
             border: none;
             font-family: Forum;
-            font-size: 30px;
-            line-height: 50px;
+            font-size: 3rem;
+            line-height: 5rem;
             letter-spacing: 0.6px;
             padding: 8px 0px 8px 20px;
             margin-bottom: 25px;
@@ -98,9 +99,8 @@
           height: 44px;
           width: 242px;
           font-family: Inter;
-          font-size: 20px;
-          font-weight: 700;
-          line-height: bold;
+          font-size: 2rem;
+          font-weight: bold;
           letter-spacing: 1px;
           margin-bottom: 30px;
           cursor: pointer;
@@ -124,15 +124,15 @@
       .get-digital-card__headline {
         margin-bottom: 35px;
         font-family: Forum;
-        font-size: 30px;
+        font-size: 3rem;
         letter-spacing: 0.6px;
       }
 
       .get-digital-card__text {
         margin-bottom: 35px;
         font-family: Inter;
-        font-size: 20px;
-        line-height: 40px;
+        font-size: 2rem;
+        line-height: 4rem;
         letter-spacing: 0.4px;
       }
 
@@ -146,7 +146,7 @@
           height: 30px;
           color: #0C0C0E;
           font-family: Inter;
-          font-size: 10px;
+          font-size: 1rem;
           font-weight: bold;
           letter-spacing: 1px;
           border-radius: 2px;

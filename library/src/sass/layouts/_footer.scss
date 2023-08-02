@@ -1,83 +1,88 @@
 .footer {
   background: $color-background;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   padding-top: 20px;
   padding-bottom: 44px;
   color: $color-light;
 
-  .footer__text-company {
+  .footer__wrapper {
+    width: 1400px;
     display: flex;
-    justify-content: space-between;
-    margin-bottom: 74px;
-    position: relative;
+    flex-direction: column;
 
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      border-bottom: 1px solid $color-light;
-      bottom: -30px;
+    .footer__text-company {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 74px;
+      position: relative;
+  
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        border-bottom: 1px solid $color-light;
+        bottom: -30px;
+      }
+  
+      .full-address {
+        width: 229px;
+        margin-bottom: 18px;
+        line-height: 2rem;
+  
+        .full-address__link {
+          text-decoration: none;
+          color: $color-light;
+          font-size: 1.5rem;
+  
+          &:hover {
+            color: $color-link;
+          }
+        }
+      }
+  
+      .social-network {
+        display: flex;
+        justify-content: space-between;
+        width: 102px;
+      }
+  
+      .footer__work-company {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        text-align: right;
+  
+        .work-company__weekdays {
+          margin-bottom: 10px;
+        }
+      }
     }
-
-    .full-address {
-      width: 229px;
-      margin-bottom: 18px;
-      line-height: 20px;
-
-      .full-address__link {
+  
+    .footer__author {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      font-size: 2rem;
+      line-height: 2rem;
+      letter-spacing: 2px;
+  
+      .link-school {
         text-decoration: none;
         color: $color-light;
-        font-size: 15px;
-
+  
         &:hover {
           color: $color-link;
         }
       }
-    }
-
-    .social-network {
-      display: flex;
-      justify-content: space-between;
-      width: 102px;
-    }
-
-    .footer__work-company {
-      font-size: 15px;
-      line-height: 20px;
-      text-align: right;
-
-      .work-company__weekdays {
-        margin-bottom: 10px;
+  
+      .author {
+        display: flex;
+        width: 300px;
+        justify-content: space-between;
+  
+        .github {
+          width: 60px;
+        }
       }
     }
-  }
-
-  .footer__author {
-    display: flex;
-    justify-content: space-between;
-    font-size: 20px;
-    line-height: 20px;
-    letter-spacing: 2px;
-
-    .link-school {
-      text-decoration: none;
-      color: $color-light;
-
-      &:hover {
-        color: $color-link;
-      }
-    }
-
-    .author {
-      display: flex;
-      width: 300px;
-      justify-content: space-between;
-
-      .github {
-        width: 60px;
-      }
-    }
-  }
+  } 
 }

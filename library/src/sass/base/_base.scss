@@ -8,6 +8,7 @@
 html {
   font-size: 10px;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -39,7 +40,7 @@ h3 {
 }
 
 .wrapper {
-  width: $content-width;
+  max-width: $content-width;
   margin: 0 auto;
 }
 
