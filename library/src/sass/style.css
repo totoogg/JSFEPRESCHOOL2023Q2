@@ -10,7 +10,7 @@
   font-family: "Inter", sans-serif;
 }
 
-.favorites__content .display-none, .favorites__radio .radio__content input[type=radio] {
+.favorites__content .display-none, .favorites__radio .radio__content input[type=radio], .slider .slider__content .display-none {
   display: none;
 }
 
