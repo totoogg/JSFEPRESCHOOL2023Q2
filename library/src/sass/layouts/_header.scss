@@ -19,11 +19,19 @@
       width: 652px;
       @include media-burger {
         width: 113px;
+        z-index: 5;
       }
 
       .header__navigation {
         @include media-burger {
-          display: none;
+          position: absolute;
+          top: 90px;
+          left: -100%;
+          background-color: rgba($color: $color-background, $alpha: 0.8);
+        }
+
+        &.active {
+          left: calc(100% - 332px);
         }
 
         .navigation {
@@ -32,6 +40,14 @@
           align-items: center;
           list-style: none;
           width: 584px;
+          @include media-burger {
+            flex-direction: column;
+            padding-top: 10px;
+            padding-bottom: 100px;
+            height: 480px;
+            width: 332px;
+            background-color: $color-background;
+          }
   
           .navigation__item__link {
             @extend %font-text;
@@ -46,6 +62,15 @@
           }
         }
       }
+
+      .table-wrapper-burger {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include media-burger {
+          width: 113px;
+        }
+      }
     
       .header__profile {
         display: flex;
@@ -57,7 +82,7 @@
         width: 45px;
         height: 20px;
         position: relative;
-        z-index: 5;
+        z-index: 6;
         cursor: pointer;
         display: none;
         @include media-burger {
@@ -81,6 +106,39 @@
             top: auto;
           }
         }
+
+        &.active {
+          span {
+            transform: scale(0);
+
+            &:first-child {
+              transform: rotate(-45deg);
+              top: calc(50% - 1px);
+            }
+  
+            &:last-child {
+              bottom: calc(50% - 1px);
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+    }
+    .tablet__wrapper {
+      display: none;
+      @include media-burger {
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba($color: $color-background, $alpha: .8);
+        z-index: 4;
+      }
+
+      &.display-none {
+        display: none;
       }
     }
   }
