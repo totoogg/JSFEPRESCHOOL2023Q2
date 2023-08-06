@@ -1,3 +1,9 @@
+.library-card__wrapper {
+  @include media-tablet {
+    padding: 0 20px;
+  }
+}
+
 .library-card {
   margin-bottom: 40px;
 
@@ -5,6 +11,9 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    @include media-tablet {
+      justify-content: center;
+    }
 
     .digital-card {
       width: 600px;
@@ -120,6 +129,11 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
+      @include media-tablet {
+        align-items: center;
+        padding-top: 21px;
+        width: 600px;
+      }
 
       .get-digital-card__headline {
         margin-bottom: 35px;
@@ -134,6 +148,9 @@
         font-size: 2rem;
         line-height: 4rem;
         letter-spacing: 0.4px;
+        @include media-tablet {
+          text-align: center;
+        }
       }
 
       .get-digital-card__buttons {

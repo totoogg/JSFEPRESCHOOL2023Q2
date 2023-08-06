@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Brooklyn Public Library</title>
   <link rel="shortcut icon" href="src/img/favicons/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="src/sass/style.css">
@@ -25,6 +26,11 @@
         </nav>
         <div class="header__profile">
           <img class="profile-icon" src="src/img/icons/icon_profile.svg" alt="profile">
+        </div>
+        <div class="header__burger">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
       </div>
     </div>
@@ -50,12 +56,12 @@
             <div class="slider__image image-3"><img src="src/img/slider/slider3.jpg" alt="slider" width="100%" height="100%"></div>
             <div class="slider__image image-4"><img src="src/img/slider/slider4.jpg" alt="slider" width="100%" height="100%"></div>
             <div class="slider__image image-5"><img src="src/img/slider/slider5.jpg" alt="slider" width="100%" height="100%"></div>
-            <div class="slider__content__button left display-none">
-              <img src="src/img/arrows/left.svg" alt="arrow-left">
-            </div>
-            <div class="slider__content__button right display-none">
-              <img src="src/img/arrows/right.svg" alt="arrow-right">
-            </div>
+          </div>
+          <div class="slider__content__button left">
+            <img src="src/img/arrows/left.svg" alt="arrow-left">
+          </div>
+          <div class="slider__content__button right">
+            <img src="src/img/arrows/right.svg" alt="arrow-right">
           </div>
           <div class="slider__radio">
             <div class="radio">
@@ -67,10 +73,10 @@
             <div class="radio">
               <div class="radio__circle"></div>
             </div>
-            <div class="radio display-none">
+            <div class="radio">
               <div class="radio__circle"></div>
             </div>
-            <div class="radio display-none">
+            <div class="radio">
               <div class="radio__circle"></div>
             </div>
           </div>
@@ -78,7 +84,7 @@
       </div>
     </section>
     <section class="favorites" id="favorites">
-      <div class="wrapper">
+      <div class="wrapper favorite__wrapper">
         <h2 class="headline">Favorites</h2>
         <p class="description__bold">Pick favorites of season</p>
         <div class="favorites__radio">
@@ -213,7 +219,7 @@
       </div>
     </section>
     <section class="coffee-shop" id="coffee-shop">
-      <div class="wrapper">
+      <div class="wrapper coffee-shop__wrapper">
         <h2 class="headline">Coffee shop</h2>
         <p class="description">In our library, we have of cozy coffee shop, welcoming in customers with frothy cappuccinos and friendly conversation. You can get a favorite book and read in coffee shop. Our barista to cook you best coffee, and also you can try desserts from bakery.</p>
         <div class="coffee-shop__menu">
@@ -241,7 +247,7 @@
           <div class="coffee-shop__menu__eats desert__menu">
             <h3 class="headline-menu headline__desert">Desserts & Cakes</h3>
             <div class="menu">
-              <div class="menu__names">
+              <div class="menu__names deserts__names">
                 <p class="menu__position desert">Forest Gateau</p>
                 <p class="menu__position desert">Blue Moon</p>
                 <p class="menu__position desert">Truffle Cake</p>
@@ -263,7 +269,7 @@
       </div>
     </section>
     <section class="contacts" id="contacts">
-      <div class="wrapper">
+      <div class="wrapper contacts__wrapper">
         <h2 class="headline our__contacts">Our Contacts</h2>
         <div class="contacts__content">
           <div class="contacts__text">
@@ -281,7 +287,7 @@
       </div>
     </section>
     <section class="library-card" id="library-card">
-      <div class="wrapper">
+      <div class="wrapper library-card__wrapper">
         <h2 class="headline">Digital Library Cards</h2>
         <div class="library-card__content">
           <div class="digital-card">
