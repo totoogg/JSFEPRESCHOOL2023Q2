@@ -9,6 +9,9 @@
     width: 1400px;
     display: flex;
     flex-direction: column;
+    @include media-tablet {
+      padding: 0 20px;
+    }
 
     .footer__text-company {
       display: flex;

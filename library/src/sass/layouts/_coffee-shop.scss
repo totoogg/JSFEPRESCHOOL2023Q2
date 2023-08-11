@@ -1,3 +1,9 @@
+.coffee-shop__wrapper {
+  @include media-tablet {
+    padding: 0 20px;
+  }
+}
+
 .coffee-shop {
   margin-top: 20px;
 
@@ -77,9 +83,18 @@
 
     .desert__menu {
       width: 482px;
+      @include media-tablet {
+        flex-grow: 1;
+      }
 
       .headline__desert {
         text-align: right;
+      }
+
+      .deserts__names {
+        @include media-tablet {
+          width: 66%;
+        }
       }
 
       .desert {

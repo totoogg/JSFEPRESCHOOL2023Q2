@@ -1,3 +1,9 @@
+.contacts__wrapper {
+  @include media-tablet {
+    padding: 0 20px;
+  }
+}
+
 .our__contacts {
   margin-top: 20px;
 }
@@ -55,6 +61,16 @@
       &:hover {
         color: $color-link;
       }
+    }
+  }
+
+  .contacts__map {
+    @include media-tablet {
+      margin-top: 100px;
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      justify-content: center;
     }
   }
 }
