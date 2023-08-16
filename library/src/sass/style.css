@@ -383,6 +383,14 @@ h3 {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 768px) {
+  .favorites__radio {
+    position: sticky;
+    background-color: #FFFFFF;
+    top: 0;
+    z-index: 2;
+  }
+}
 .favorites__radio .radio__content {
   display: flex;
   justify-content: flex-end;
@@ -511,6 +519,7 @@ h3 {
   position: absolute;
   bottom: -1px;
   left: 390px;
+  z-index: 1;
 }
 @media (max-width: 768px) {
   .coffee-shop__wrapper {

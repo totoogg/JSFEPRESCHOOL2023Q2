@@ -15,6 +15,12 @@
   height: 24px;
   display: flex;
   justify-content: space-between;
+  @include media-tablet {
+    position: sticky;
+    background-color: $color-light;
+    top: 0;
+    z-index: 2;
+  }
 
   .radio__content {
     display: flex;
@@ -169,6 +175,7 @@
       position: absolute;
       bottom: -1px;
       left: 390px;
+      z-index: 1;
     }
   }
 

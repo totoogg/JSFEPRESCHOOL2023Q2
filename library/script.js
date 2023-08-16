@@ -104,3 +104,6 @@ if (document.documentElement.clientWidth <= 768) {
   })
 }
 
+
+
+//--------------Favorite-slider---------------------
