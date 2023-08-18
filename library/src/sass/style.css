@@ -10,7 +10,7 @@
   font-family: "Inter", sans-serif;
 }
 
-.favorites__content .display-none, .favorites__radio .radio__content input[type=radio] {
+.display-none, .favorites__radio .radio__content input[type=radio] {
   display: none;
 }
 
@@ -520,6 +520,39 @@ h3 {
   bottom: -1px;
   left: 390px;
   z-index: 1;
+}
+
+.animation {
+  animation: anima 350ms backwards ease-in-out;
+  opacity: 0;
+}
+
+@keyframes anima {
+  from {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.visibility {
+  animation: visibl 350ms backwards ease-in-out;
+  opacity: 1;
+}
+
+@keyframes visibl {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  to {
+    opacity: 1;
+  }
 }
 @media (max-width: 768px) {
   .coffee-shop__wrapper {

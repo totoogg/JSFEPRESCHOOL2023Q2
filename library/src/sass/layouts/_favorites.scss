@@ -178,8 +178,30 @@
       z-index: 1;
     }
   }
+}
 
-  .display-none {
-    @extend %display-none;
-  }
+.animation {
+  animation: anima 350ms backwards ease-in-out;
+  opacity: 0;
+} 
+
+@keyframes anima {
+  from {opacity: 1;}
+  50% {opacity: 0.5;}
+  to {opacity: 0;}
+}
+
+.visibility {
+  animation: visibl 350ms backwards ease-in-out;
+  opacity: 1;
+} 
+
+@keyframes visibl {
+  from {opacity: 0;}
+  50% {opacity: 0.5;}
+  to {opacity: 1;}
+}
+
+.display-none {
+  @extend %display-none;
 }

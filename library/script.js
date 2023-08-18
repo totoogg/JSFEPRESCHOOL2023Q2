@@ -1,4 +1,5 @@
 import {trackingSliderImage} from './src/scripts/aboutSlider.js'
+import {displayNone} from './src/scripts/favorite.js'
 
 const body = document.body;
 
@@ -13,8 +14,12 @@ const aboutSliderButtonRight = document.querySelector('.right');
 const aboutSliderRadio = document.querySelectorAll('.radio');
 let aboutSliderMarginLeft = 0;
 
+const favoriteRadio = document.querySelectorAll('input[type=radio]')
+const favoriteContent = document.querySelectorAll('.favorites__content__cards')
+
 
 //--------------Burger---------------------
+
 
 navigationBurger.addEventListener('click', () => {
   navigation.classList.toggle('active');
@@ -43,6 +48,7 @@ navigation.querySelectorAll('.navigation__item__link').forEach(link => {
 
 
 //--------------About-slider---------------------
+
 
 aboutSliderButtonLeft.addEventListener('click', () => {
 
@@ -105,5 +111,21 @@ if (document.documentElement.clientWidth <= 768) {
 }
 
 
-
 //--------------Favorite-slider---------------------
+
+
+let currentRadio = document.querySelector('input[type=radio]:checked').value;
+
+favoriteRadio.forEach(x => {
+  x.addEventListener('click', (e) => {
+    if (currentRadio !== e.target.value) {
+      currentRadio = e.target.value;
+      favoriteContent.forEach(x => {
+        x.classList.remove('visibility')
+        x.classList.add('animation')   
+        x.addEventListener('animationend', displayNone)
+      })
+    }
+  })
+})
+
