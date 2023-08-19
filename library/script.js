@@ -17,6 +17,11 @@ let aboutSliderMarginLeft = 0;
 const favoriteRadio = document.querySelectorAll('input[type=radio]')
 const favoriteContent = document.querySelectorAll('.favorites__content__cards')
 
+const dropMenu = document.querySelector('.header__drop-menu');
+const userHead = document.querySelector('.header__profile');
+const userImg = document.querySelector('.profile-icon');
+const dropMenuText1 = document.querySelector('.text-1');
+const dropMenuText2 = document.querySelector('.text-2');
 
 //--------------Burger---------------------
 
@@ -26,6 +31,7 @@ navigationBurger.addEventListener('click', () => {
   navigationBurger.classList.toggle('active');
   wrapperBurger.classList.toggle('display-none');
   body.classList.toggle('lock');
+  dropMenu.classList.remove('drop-menu__active')
 });
 
 wrapperBurger.addEventListener('click', e => {
@@ -34,6 +40,7 @@ wrapperBurger.addEventListener('click', e => {
     navigationBurger.classList.remove('active');
     wrapperBurger.classList.add('display-none');
     body.classList.remove('lock');
+    dropMenu.classList.remove('drop-menu__active')
   }
 })
 
@@ -129,3 +136,22 @@ favoriteRadio.forEach(x => {
   })
 })
 
+
+//--------------Drop-menu---------------------
+
+
+userHead.addEventListener('click', () => {
+  dropMenu.classList.toggle('drop-menu__active');
+  if (navigation.classList.contains('active')) {
+    navigation.classList.toggle('active');
+    navigationBurger.classList.toggle('active');
+    wrapperBurger.classList.toggle('display-none');
+    body.classList.toggle('lock');
+  }
+})
+
+body.addEventListener('click', e => {
+  if (!e.target.closest('.header__drop-menu') && !e.target.classList.contains('profile-icon')) {
+    dropMenu.classList.remove('drop-menu__active');
+  }
+})

@@ -17,6 +17,7 @@
       justify-content: space-between;
       align-items: center;
       width: 652px;
+      position: relative;
       @include media-burger {
         width: 113px;
         z-index: 5;
@@ -25,13 +26,13 @@
       .header__navigation {
         @include media-burger {
           position: absolute;
-          top: 90px;
-          left: -100%;
+          top: 70px;
+          left: -1000%;
           background-color: rgba($color: $color-background, $alpha: 0.8);
         }
 
         &.active {
-          left: calc(100% - 332px);
+          left: calc(100% - 312px);
         }
 
         .navigation {
@@ -120,6 +121,55 @@
               bottom: calc(50% - 1px);
               transform: rotate(45deg);
             }
+          }
+        }
+      }
+
+      .header__drop-menu {
+        position: absolute;
+        width: 80px;
+        height: 115px;
+        background-color: $color-light;
+        top: 50px;
+        left: -1000%;
+        z-index: 6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5px;
+        
+        &.drop-menu__active {
+          left: calc(100% - 80px);
+          @include media-burger {
+            left: 0; 
+          }
+        }
+
+        .drop-menu__title {
+          @include font (1.5rem, 2rem, bold);
+          @extend %font-text;
+          margin-bottom: 20px;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            background-color: $color-link;
+            width: 40px;
+            height: 2px;
+            bottom: -5px;
+            left: 4px;
+          }
+        }
+
+        .drop-menu__text {
+          @include font (1.5rem, 2rem);
+          @extend %font-text;
+          margin-bottom: 10px;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-link;
           }
         }
       }
