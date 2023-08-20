@@ -76,7 +76,24 @@
       .header__profile {
         display: flex;
         align-items: center;
-        cursor: pointer;      
+        cursor: pointer;
+
+        .user-visit {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background-color: $color-light;
+          color: $color-link;
+          @extend %font-text;
+          @include font(1.5rem, 2rem);
+        }
+
+        .display-none {
+          display: none;
+        }
       }
 
       .header__burger {
@@ -174,19 +191,157 @@
         }
       }
     }
-    .tablet__wrapper {
-      display: none;
-      @include media-burger {
-        display: block;
+
+    .header__modal {
+      position: fixed;
+      width: 250px;
+      height: 382px;
+      z-index: 6;
+      background-color: $color-light;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: calc(50% - 191px);
+      left: calc(50% - 125px);
+      padding-top: 20px;
+
+      .modal__cross {
+        width: 15px;
+        height: 15px;
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba($color: $color-background, $alpha: .8);
-        z-index: 4;
+        right: 15px;
+        top: 15px;
+        z-index: 6;
+        cursor: pointer;
+        display: block;
+
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $color-background;
+         
+
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+          }
+
+          &:last-child {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+          }
+        }
       }
 
+      .modal__title {
+        @extend %font-headline;
+        @include font (2rem, 2rem, 400);
+        letter-spacing: 0.4px;
+        margin-bottom: 20px;
+      }
+
+      .modal__form {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        @extend %font-text;
+        @include font(1.5rem, 2rem);
+        letter-spacing: 0.3px;
+
+        & > label {
+          margin-bottom: 10px;
+        }
+
+        .form__input__error {
+          height: 10px;
+          color: red;
+          @extend %font-text;
+          @include font(1rem, 1rem);
+          letter-spacing: 0.3px;
+        }
+
+        & > input {
+          height: 20px;
+          border: 1px solid $color-link;
+          padding: 0 5px;
+
+          &:hover {
+            border: 2px solid $color-link;
+          }
+
+          &:focus {
+            outline-color: $color-link;
+          }
+        }
+
+        .form__button {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          background-color: $color-light;
+          width: 75px;
+          height: 30px;
+          border-radius: 2px;
+          border: 1px solid #0C0C0E;
+          font-family: Inter;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-background;
+            background: $color-link;
+            border: 1px solid $color-link;
+          }
+        }
+      }
+
+      .modal__text {
+        width: 164px;
+        height: 10px;
+        display: flex;
+        justify-content: space-between;
+
+        .modal__text__login {
+          @extend %font-text;
+          @include font(1rem, 1rem);
+        }
+
+        .modal__text__link {
+          @include font(1rem, 1rem);
+
+          .link__login {
+            color: $color-text;
+            @extend %font-text;
+            @include font(1rem, 1rem, bold);
+            letter-spacing: 1px;
+
+            &:hover {
+              color: $color-link;
+            }
+          }
+        }
+      }
+
+      &.display-none {
+        display: none;
+      }
+    }
+
+    .tablet__wrapper {
+      display: none;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($color: $color-background, $alpha: .5);
+      z-index: 4;
+      
       &.display-none {
         display: none;
       }

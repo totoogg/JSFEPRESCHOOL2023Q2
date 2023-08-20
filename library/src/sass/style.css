@@ -2,11 +2,11 @@
   transition: all 0.3s ease-out;
 }
 
-.welcome__text, h3, h2, h1 {
+.header .header__wrapper .header__modal .modal__title, .welcome__text, h3, h2, h1 {
   font-family: "Forum", serif;
 }
 
-.contacts__content .contacts__text__director, .contacts__content .contacts__text__address, .favorites__content .favorites__content__cards .card__button, .header .header__wrapper .header__content .header__drop-menu .drop-menu__text, .header .header__wrapper .header__content .header__drop-menu .drop-menu__title, .header .header__wrapper .header__content .header__navigation .navigation .navigation__item__link, body {
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader .info-reader__block .info-reader__block__title, .contacts__content .contacts__text__director, .contacts__content .contacts__text__address, .favorites__content .favorites__content__cards .card__button, .header .header__wrapper .header__modal .modal__text .modal__text__link .link__login, .header .header__wrapper .header__modal .modal__text .modal__text__login, .header .header__wrapper .header__modal .modal__form .form__input__error, .header .header__wrapper .header__modal .modal__form, .header .header__wrapper .header__content .header__drop-menu .drop-menu__text, .header .header__wrapper .header__content .header__drop-menu .drop-menu__title, .header .header__wrapper .header__content .header__profile .user-visit, .header .header__wrapper .header__content .header__navigation .navigation .navigation__item__link, body {
   font-family: "Inter", sans-serif;
 }
 
@@ -157,6 +157,22 @@ h3 {
   align-items: center;
   cursor: pointer;
 }
+.header .header__wrapper .header__content .header__profile .user-visit {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: #BB945F;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: normal;
+}
+.header .header__wrapper .header__content .header__profile .display-none {
+  display: none;
+}
 .header .header__wrapper .header__content .header__burger {
   width: 45px;
   height: 20px;
@@ -243,20 +259,141 @@ h3 {
 .header .header__wrapper .header__content .header__drop-menu .drop-menu__text:hover {
   color: #BB945F;
 }
-.header .header__wrapper .tablet__wrapper {
+.header .header__wrapper .header__modal {
+  position: fixed;
+  width: 250px;
+  height: 382px;
+  z-index: 6;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: calc(50% - 191px);
+  left: calc(50% - 125px);
+  padding-top: 20px;
+}
+.header .header__wrapper .header__modal .modal__cross {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 6;
+  cursor: pointer;
+  display: block;
+}
+.header .header__wrapper .header__modal .modal__cross span {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #0C0C0E;
+}
+.header .header__wrapper .header__modal .modal__cross span:first-child {
+  transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+.header .header__wrapper .header__modal .modal__cross span:last-child {
+  bottom: calc(50% - 1px);
+  transform: rotate(45deg);
+}
+.header .header__wrapper .header__modal .modal__title {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  margin-bottom: 20px;
+}
+.header .header__wrapper .header__modal .modal__form {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+}
+.header .header__wrapper .header__modal .modal__form > label {
+  margin-bottom: 10px;
+}
+.header .header__wrapper .header__modal .modal__form .form__input__error {
+  height: 10px;
+  color: red;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+}
+.header .header__wrapper .header__modal .modal__form > input {
+  height: 20px;
+  border: 1px solid #BB945F;
+  padding: 0 5px;
+}
+.header .header__wrapper .header__modal .modal__form > input:hover {
+  border: 2px solid #BB945F;
+}
+.header .header__wrapper .header__modal .modal__form > input:focus {
+  outline-color: #BB945F;
+}
+.header .header__wrapper .header__modal .modal__form .form__button {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #FFFFFF;
+  width: 75px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  font-family: Inter;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.header .header__wrapper .header__modal .modal__form .form__button:hover {
+  color: #0C0C0E;
+  background: #BB945F;
+  border: 1px solid #BB945F;
+}
+.header .header__wrapper .header__modal .modal__text {
+  width: 164px;
+  height: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.header .header__wrapper .header__modal .modal__text .modal__text__login {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+}
+.header .header__wrapper .header__modal .modal__text .modal__text__link {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+}
+.header .header__wrapper .header__modal .modal__text .modal__text__link .link__login {
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.header .header__wrapper .header__modal .modal__text .modal__text__link .link__login:hover {
+  color: #BB945F;
+}
+.header .header__wrapper .header__modal.display-none {
   display: none;
 }
-@media (max-width: 1024px) {
-  .header .header__wrapper .tablet__wrapper {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: rgba(12, 12, 14, 0.8);
-    z-index: 4;
-  }
+.header .header__wrapper .tablet__wrapper {
+  display: none;
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(12, 12, 14, 0.5);
+  z-index: 4;
 }
 .header .header__wrapper .tablet__wrapper.display-none {
   display: none;
@@ -791,6 +928,7 @@ h3 {
 .library-card .library-card__content .digital-card .library-form {
   padding-top: 20px;
   width: 600px;
+  height: 386px;
   border: 3px solid #BB945F;
   box-shadow: 1px 5px 5px #8E8E8E;
   display: flex;
@@ -800,7 +938,7 @@ h3 {
 .library-card .library-card__content .digital-card .library-form .library-form__container {
   width: 560px;
   background: #BB945F;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
   display: flex;
   flex-direction: column;
   padding: 20px 20px 0px 20px;
@@ -814,6 +952,7 @@ h3 {
   margin-bottom: 20px;
 }
 .library-card .library-card__content .digital-card .library-form .library-form__container .form__reader-name {
+  color: #BB945F;
   width: 520px;
   border-radius: 10px;
   border: none;
@@ -834,6 +973,7 @@ h3 {
   outline-color: #BB945F;
 }
 .library-card .library-card__content .digital-card .library-form .library-form__container .form__number-card {
+  color: #BB945F;
   width: 520px;
   border-radius: 10px;
   border: none;
@@ -853,7 +993,38 @@ h3 {
 .library-card .library-card__content .digital-card .library-form .library-form__container .form__number-card:focus {
   outline-color: #BB945F;
 }
-.library-card .library-card__content .digital-card .library-form .form-button {
+.library-card .library-card__content .digital-card .library-form .digit-button {
+  padding-top: 5px;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader {
+  width: 169px;
+  height: 63px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 23px;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader .info-reader__block {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader .info-reader__block .info-reader__block__title {
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.2px;
+  text-align: center;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader .info-reader__block .info-reader__block__img {
+  width: 20px;
+  height: 21px;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader.display-none {
+  display: none;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button .form-button {
   border-radius: 2px;
   border: 1px solid #0C0C0E;
   background: #FFFFFF;
@@ -866,10 +1037,16 @@ h3 {
   margin-bottom: 30px;
   cursor: pointer;
 }
-.library-card .library-card__content .digital-card .library-form .form-button:hover {
+.library-card .library-card__content .digital-card .library-form .digit-button .form-button:hover {
   color: #0C0C0E;
   background: #BB945F;
   border: 1px solid #BB945F;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button .form-button.display-none {
+  display: none;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button.information {
+  padding-top: 0;
 }
 .library-card .library-card__content .get-digital-card {
   width: 456px;

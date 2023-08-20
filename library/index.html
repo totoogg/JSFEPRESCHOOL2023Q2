@@ -26,6 +26,7 @@
         </nav>
         <div class="table-wrapper-burger">
           <div class="header__profile">
+            <div class="user-visit display-none"></div>
             <img class="profile-icon" src="src/img/icons/icon_profile.svg" alt="profile">
           </div>
           <div class="header__burger">
@@ -38,6 +39,32 @@
           <h5 class="drop-menu__title">Profile</h5>
           <p class="drop-menu__text text-1">Log In</p>
           <p class="drop-menu__text text-2">Register</p>
+        </div>
+      </div>
+      <div class="header__modal display-none">
+        <div class="modal__cross">
+          <span></span>
+          <span></span>
+        </div>
+        <h5 class="modal__title">REGISTER</h5>
+        <form action="#" method="post" class="modal__form">
+          <label for="first" class="form__name">First name</label>
+          <input type="text" name="first" id="first" class="form__input-name">
+          <div class="form__input__error"></div>
+          <label for="second" class="form__name">Last name</label>
+          <input type="text" name="second" id="second" class="form__input-name">
+          <div class="form__input__error"></div>
+          <label for="mail" class="form__name">E-mail</label>
+          <input type="email" name="mail" id="mail" class="form__input-name">
+          <div class="form__input__error error__mail"></div>
+          <label for="password" class="form__name">Password</label>
+          <input type="password" name="password" id="password" class="form__input-name">
+          <div class="form__input__error error__password"></div>
+          <button class="form__button">Sign Up</button>
+        </form>  
+        <div class="modal__text">
+          <p class="modal__text__login">Already have an account?</p>
+          <p class="modal__text__link"><a href="#" class="link__login">Login</a></p>
         </div>
       </div>
       <div class="tablet__wrapper display-none"></div>
@@ -303,10 +330,29 @@
             <form action="#" method="post" class="library-form">
               <div class="library-form__container">
                 <h3 class="form-headline">Brooklyn Public Library</h3>
-                <input type="text" name="reader" class="form__reader-name" placeholder="Reader's name " pattern="[-A-Za-z0-9]+">
-                <input type="text" name="number-card" class="form__number-card" placeholder="Card number" pattern="[-A-Za-z0-9]+">
+                <input type="text" name="reader" class="form__reader-name" placeholder="Reader's name">
+                <input type="text" name="number-card" class="form__number-card" placeholder="Card number">
               </div>
-              <button class="form-button">Check the card</button>
+              <div class="digit-button">
+                <div class="info-reader display-none">
+                  <div class="info-reader__block visit">
+                    <p class="info-reader__block__title">Visit</p>
+                    <div class="info-reader__block__img"><img src="/src/img/icons/visits.svg" alt="visit"></div>
+                    <p class="info-reader__block__title visit__count">0</p>
+                  </div>
+                  <div class="info-reader__block bonuses">
+                    <p class="info-reader__block__title">Bonuses</p>
+                    <div class="info-reader__block__img"><img src="/src/img/icons/bonuses.svg" alt="bonuses"></div>
+                    <p class="info-reader__block__title bonuses__count">0</p>
+                  </div>
+                  <div class="info-reader__block books">
+                    <p class="info-reader__block__title">Books</p>
+                    <div class="info-reader__block__img"><img src="/src/img/icons/books.svg" alt="books"></div>
+                    <p class="info-reader__block__title books__count">0</p>
+                  </div>
+                </div>
+                <button class="form-button">Check the card</button>
+              </div>
             </form>
           </div>
           <div class="get-digital-card">

@@ -29,6 +29,7 @@
       .library-form {
         padding-top: 20px;
         width: 600px;
+        height: 386px;
         border: 3px solid #BB945F;
         box-shadow: 1px 5px 5px $color-placeholder;
         display: flex;
@@ -38,7 +39,7 @@
         .library-form__container {
           width: 560px;
           background: $color-link;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
           display: flex;
           flex-direction: column;
           padding: 20px 20px 0px 20px;
@@ -53,6 +54,7 @@
           }
 
           .form__reader-name {
+            color: $color-link;
             width: 520px;
             border-radius: 10px;
             border: none;
@@ -77,6 +79,7 @@
           }
           
           .form__number-card {
+            color: $color-link;
             width: 520px;
             border-radius: 10px;
             border: none;
@@ -101,23 +104,67 @@
           }
         }
 
-        .form-button {
-          border-radius: 2px;
-          border: 1px solid #0C0C0E;
-          background: $color-light;
-          height: 44px;
-          width: 242px;
-          font-family: Inter;
-          font-size: 2rem;
-          font-weight: bold;
-          letter-spacing: 1px;
-          margin-bottom: 30px;
-          cursor: pointer;
+        .digit-button {
+          padding-top: 5px;
 
-          &:hover {
-            color: $color-background;
-            background: $color-link;
-            border: 1px solid $color-link;
+          .info-reader {
+            width: 169px;
+            height: 63px;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 23px;
+
+            .info-reader__block {
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              align-items: center;
+
+              .info-reader__block__title {
+                @extend %font-text;
+                @include font(1rem, 1rem);
+                letter-spacing: 0.2px;
+                text-align: center;
+              }
+
+              .info-reader__block__img {
+                width: 20px;
+                height: 21px;
+              }
+            }
+
+            &.display-none {
+              display: none;
+            }
+          }
+
+          .form-button {
+            border-radius: 2px;
+            border: 1px solid #0C0C0E;
+            background: $color-light;
+            height: 44px;
+            width: 242px;
+            font-family: Inter;
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 30px;
+            cursor: pointer;
+  
+            &:hover {
+              color: $color-background;
+              background: $color-link;
+              border: 1px solid $color-link;
+            }
+
+            &.display-none {
+              display: none;
+            }
+          }
+
+          &.information {
+            padding-top: 0;
           }
         }
       }
