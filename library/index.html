@@ -67,6 +67,74 @@
           <p class="modal__text__link"><a href="#" class="link__login">Login</a></p>
         </div>
       </div>
+      <div class="header__modal__login display-none">
+        <div class="modal__cross__login">
+          <span></span>
+          <span></span>
+        </div>
+        <h5 class="modal__title__login">LOGIN</h5>
+        <form action="#" method="post" class="modal__form__login">
+          <label for="first__login" class="form__name__login">E-mail or readers card</label>
+          <input type="text" name="first__login" id="first__login" class="form__input-name__login">
+          <div class="form__input__error__login readers-card__error"></div>
+          <label for="password__login" class="form__name__login">Password</label>
+          <input type="password" name="password__login" id="password__login" class="form__input-name__login">
+          <div class="form__input__error__login error__password"></div>
+          <button class="form__button__login">Log In</button>
+        </form>  
+        <div class="modal__text__login">
+          <p class="modal__text__register">Don’t have an account?</p>
+          <p class="modal__text__link__login"><a href="#" class="link__register">Register</a></p>
+        </div>
+      </div>
+      <div class="profile">
+        <div class="profile__cross">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="profile__icon">
+          <div class="icon__sqrt"></div>
+          <div class="icon__full_name"></div>
+        </div>
+        <div class="profile__content">
+          <h5 class="profile__content__tittle">MY PROFILE</h5>
+          <div class="profile__content__info-reader">
+            <div class="info-reader__block visit">
+              <p class="info-reader__block__title">Visit</p>
+              <div class="info-reader__block__img"><img src="/src/img/icons/visits.svg" alt="visit"></div>
+              <p class="info-reader__block__title visit__count">0</p>
+            </div>
+            <div class="info-reader__block bonuses">
+              <p class="info-reader__block__title">Bonuses</p>
+              <div class="info-reader__block__img"><img src="/src/img/icons/bonuses.svg" alt="bonuses"></div>
+              <p class="info-reader__block__title bonuses__count">0</p>
+            </div>
+            <div class="info-reader__block books">
+              <p class="info-reader__block__title">Books</p>
+              <div class="info-reader__block__img"><img src="/src/img/icons/books.svg" alt="books"></div>
+              <p class="info-reader__block__title books__count">0</p>
+            </div>
+          </div>
+          <p class="profile__content__rented">Rented books</p>
+          <div class="rented_books">
+            <ul class="list_books">
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+            </ul>
+          </div>
+          <div class="profile__content__card">
+            <p class="card__tittle">Card number</p>
+            <p class="card__number">F00234030</p>
+            <img class="card__copy" src="./src/img/icons/copy.svg" alt="copy">
+          </div>
+        </div>
+      </div>
       <div class="tablet__wrapper display-none"></div>
     </div>
   </header>
@@ -360,7 +428,7 @@
             <p class="get-digital-card__text">You will be able to see a reader card after logging into account or you can register a new account</p>
             <div class="get-digital-card__buttons">
               <button class="get-digital-card__buttons__link">Sign Up</button>
-              <button class="get-digital-card__buttons__link">Log in</button>
+              <button class="get-digital-card__buttons__link digit__login">Log in</button>
             </div>
           </div>
         </div>

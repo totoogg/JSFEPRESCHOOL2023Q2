@@ -304,6 +304,8 @@
         height: 10px;
         display: flex;
         justify-content: space-between;
+        align-self: flex-start;
+        margin-left: 25px;
 
         .modal__text__login {
           @extend %font-text;
@@ -329,6 +331,160 @@
       &.display-none {
         display: none;
       }
+    }
+
+    .header__modal__login {
+      position: fixed;
+      width: 250px;
+      height: 262px;
+      z-index: 6;
+      background-color: $color-light;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: calc(50% - 191px);
+      left: calc(50% - 125px);
+      padding-top: 20px;
+
+      .modal__cross__login {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 6;
+        cursor: pointer;
+        display: block;
+
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $color-background;
+         
+
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+          }
+
+          &:last-child {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .modal__title__login {
+        @extend %font-headline;
+        @include font (2rem, 2rem, 400);
+        letter-spacing: 0.4px;
+        margin-bottom: 20px;
+      }
+
+      .modal__form__login {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        @extend %font-text;
+        @include font(1.5rem, 2rem);
+        letter-spacing: 0.3px;
+
+        & > label {
+          margin-bottom: 10px;
+        }
+
+        .form__input__error__login {
+          height: 10px;
+          color: red;
+          @extend %font-text;
+          @include font(1rem, 1rem);
+          letter-spacing: 0.3px;
+        }
+
+        & > input {
+          height: 20px;
+          border: 1px solid $color-link;
+          padding: 0 5px;
+
+          &:hover {
+            border: 2px solid $color-link;
+          }
+
+          &:focus {
+            outline-color: $color-link;
+          }
+        }
+
+        .form__button__login {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          background-color: $color-light;
+          width: 75px;
+          height: 30px;
+          border-radius: 2px;
+          border: 1px solid #0C0C0E;
+          font-family: Inter;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-background;
+            background: $color-link;
+            border: 1px solid $color-link;
+          }
+        }
+      }
+
+      .modal__text__login {
+        width: 164px;
+        height: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-start;
+        margin-left: 25px;
+
+        .modal__text__register {
+          @extend %font-text;
+          @include font(1rem, 1rem);
+        }
+
+        .modal__text__link__login {
+          @include font(1rem, 1rem);
+
+          .link__register {
+            color: $color-text;
+            @extend %font-text;
+            @include font(1rem, 1rem, bold);
+            letter-spacing: 1px;
+
+            &:hover {
+              color: $color-link;
+            }
+          }
+        }
+      }
+
+      &.display-none {
+        display: none;
+      }
+    }
+
+    .profile {
+      width: 600px;
+      height: 400px;
+      position: fixed;
+      z-index: 6;
+      background-color: $color-light;
+      display: flex;
+      top: calc(50% - 200px);
+      left: calc(50% - 300px);
+
+      
     }
 
     .tablet__wrapper {
