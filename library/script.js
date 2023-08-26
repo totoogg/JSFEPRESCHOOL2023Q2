@@ -2,6 +2,8 @@ import {trackingSliderImage} from './src/scripts/aboutSlider.js'
 import {displayNone} from './src/scripts/favorite.js'
 import {getUserLocalStorage} from './src/scripts/userLocal.js'
 import {randomNumberCard} from './src/scripts/randomNumber.js'
+import {pageLogOut} from './src/scripts/pageLogOut.js'
+import {currentUserProfile} from './src/scripts/currentUserProfile.js'
 
 const body = document.body;
 
@@ -62,6 +64,9 @@ const digitalFormInfo = document.querySelector('.info-reader')
 const digitalFormNumberCard = document.querySelector('.form__number-card')
 const digitalFormName = document.querySelector('.form__reader-name')
 
+const profileModal = document.querySelector('.profile')
+const profileModalCross = document.querySelector('.profile__cross')
+
 
 //--------------Burger---------------------
 
@@ -71,6 +76,7 @@ navigationBurger.addEventListener('click', () => {
   navigationBurger.classList.toggle('active');
   modalRegister.classList.add('display-none');
   modalLogin.classList.add('display-none');
+  profileModal.classList.add('display-none');
   if (navigation.classList.contains('active')) {
     wrapperBurger.classList.remove('display-none');
     body.classList.add('lock');
@@ -89,6 +95,7 @@ wrapperBurger.addEventListener('click', e => {
     dropMenu.classList.remove('drop-menu__active');
     modalRegister.classList.add('display-none');
     modalLogin.classList.add('display-none');
+    profileModal.classList.add('display-none')
   }
 })
 
@@ -238,7 +245,18 @@ dropMenuText2.addEventListener('click', () => {
     body.classList.add('lock');
     modalRegister.classList.toggle('display-none');
   } else {
+    navigation.classList.remove('active');
+    navigationBurger.classList.remove('active');
+    modalLogin.classList.add('display-none')
+    dropMenu.classList.remove('drop-menu__active');
+    wrapperBurger.classList.add('display-none');
+    body.classList.add('lock');
+    profileModal.classList.add('display-none');
 
+    login = false;
+    currentUser = {};
+
+    pageLogOut()
   }
 })
 
@@ -325,6 +343,8 @@ modalButtonRegister.addEventListener('click', () => {
     localStorage.setItem(`${modalFirstName.value.toLowerCase()} ${modalLastName.value.toLowerCase()}`, jsonStr);
 
     getUserLocalStorage(`${modalFirstName.value.toLowerCase()} ${modalLastName.value.toLowerCase()}`)
+
+    currentUserProfile(currentUser)
   }
 })
 
@@ -342,7 +362,13 @@ dropMenuText1.addEventListener('click', () => {
     body.classList.add('lock');
     modalLogin.classList.toggle('display-none');
   } else {
-
+    profileModal.classList.remove('display-none')
+    navigation.classList.remove('active');
+    navigationBurger.classList.remove('active');
+    modalRegister.classList.add('display-none')
+    dropMenu.classList.remove('drop-menu__active');
+    wrapperBurger.classList.remove('display-none');
+    body.classList.add('lock');
   }
 })
 
@@ -409,6 +435,8 @@ modalButtonLogin.addEventListener('click', () => {
           wrapperBurger.classList.add('display-none');
           body.classList.remove('lock');
 
+          currentUserProfile(currentUser)
+
           return
         }
       }
@@ -442,6 +470,11 @@ digitalFormButton.addEventListener('click', () => {
 })
 
 
-//--------------      ---------------------
+//--------------Profile---------------------
 
 
+profileModalCross.addEventListener('click', () => {
+  wrapperBurger.classList.toggle('display-none');
+  body.classList.toggle('lock');
+  profileModal.classList.add('display-none');
+})

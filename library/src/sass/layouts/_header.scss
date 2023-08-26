@@ -484,7 +484,161 @@
       top: calc(50% - 200px);
       left: calc(50% - 300px);
 
-      
+      .profile__cross {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        z-index: 6;
+        cursor: pointer;
+        display: block;
+
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $color-background;
+         
+
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+          }
+
+          &:last-child {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .profile__icon {
+        width: 170px;
+        background-color: $color-background;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .icon__sqrt {
+          width: 80px;
+          height: 80px;
+          background-color: $color-light;
+          color: $color-link;
+          @extend %font-text;
+          @include font(2rem, 2rem);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .icon__full_name {
+          width: 120px;
+          min-height: 30px;
+          @extend %font-text;
+          @include font(2rem, 2rem);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $color-light;
+        }
+      }
+
+      .profile__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+
+        .profile__content__tittle {
+          letter-spacing: 0.8px;
+          @extend %font-headline;
+          @include font(4rem, 4rem, 400);
+          margin-bottom: 30px;
+        }
+
+        .profile__content__info-reader {
+          width: 237px;
+          height: 81px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 18px;
+
+          .info-reader__block {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .info-reader__block__title {
+              letter-spacing: 0.4px;
+              @extend %font-text;
+              @include font(2rem, 2rem);
+            }
+
+            .info-reader__block__img {
+              width: 20px;
+              height: 21px;
+            }
+
+            .info-reader__block__count {
+              letter-spacing: 0.2px;
+              @extend %font-text;
+              @include font(1rem, 2rem);
+            }
+          }
+        }
+
+        .profile__content__rented {
+          @extend %font-text;
+          @include font(2.5rem, 2.5rem);
+          margin-bottom: 27px;
+        }
+
+        .rented_books {
+          width: 390px;
+          height: 90px;
+          overflow-y: auto;
+          margin-bottom: 10px;
+          padding-left: 25px;
+
+          .list_books {
+            display: flex;
+            flex-direction: column;
+
+            .list_books__item {
+              letter-spacing: 2px;
+              @extend %font-text;
+              @include font(2rem, 2rem);
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+        .profile__content__card {
+          display: flex;
+          justify-content: space-between;
+          width: 281px;
+          @extend %font-text;
+          @include font(2rem, 2rem);
+
+          .card__number {
+            color: $color-link;
+          }
+
+          .card__copy {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &.display-none {
+        display: none;
+      }
     }
 
     .tablet__wrapper {
