@@ -66,6 +66,8 @@ const digitalFormName = document.querySelector('.form__reader-name')
 
 const profileModal = document.querySelector('.profile')
 const profileModalCross = document.querySelector('.profile__cross')
+const profileModalCardNumber = document.querySelector('.card__number')
+const profileModalCardCopy = document.querySelector('.card__copy')
 
 
 //--------------Burger---------------------
@@ -250,7 +252,7 @@ dropMenuText2.addEventListener('click', () => {
     modalLogin.classList.add('display-none')
     dropMenu.classList.remove('drop-menu__active');
     wrapperBurger.classList.add('display-none');
-    body.classList.add('lock');
+    body.classList.remove('lock');
     profileModal.classList.add('display-none');
 
     login = false;
@@ -332,6 +334,12 @@ modalButtonRegister.addEventListener('click', () => {
       mail: modalMail.value.toLowerCase(),
       password: modalPassword.value,
       cardNumber: randomNumberCard(),
+      profile: {
+        visit: 1,
+        bonuses: 0,
+        books: [],
+      },
+      libraryCard: false,
     };
 
     currentUser = user
@@ -425,6 +433,9 @@ modalButtonLogin.addEventListener('click', () => {
         if ((modalNameLogin.value.toLowerCase() === item.mail || modalNameLogin.value.toLowerCase() === item.cardNumber) && modalPasswordLogin.value === item.password) {
           login = true;
 
+          item.profile.visit++
+          let jsonStr = JSON.stringify(item);
+          localStorage.setItem(`${item.firstName} ${item.lastName}`, jsonStr);
           currentUser = item
 
           userIcon.title = `${currentUser.firstName[0].toUpperCase() + currentUser.firstName.slice(1)} ${currentUser.lastName[0].toUpperCase() + currentUser.lastName.slice(1)}`
@@ -477,4 +488,11 @@ profileModalCross.addEventListener('click', () => {
   wrapperBurger.classList.toggle('display-none');
   body.classList.toggle('lock');
   profileModal.classList.add('display-none');
+})
+
+profileModalCardCopy.addEventListener('click', () => {
+  document.getSelection().removeAllRanges();
+  document.getSelection().selectAllChildren(profileModalCardNumber)
+  document.execCommand("copy")
+  document.getSelection().removeAllRanges();
 })
