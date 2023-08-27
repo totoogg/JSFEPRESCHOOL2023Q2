@@ -155,6 +155,13 @@
         cursor: auto;
         color: $color-link;
         border: 1px solid $color-link;
+
+        &:hover {
+          cursor: auto;
+          color: $color-link;
+          background: $color-light;
+          border: 1px solid $color-link;
+        }
       }
 
       &:hover {
@@ -162,13 +169,6 @@
         background: $color-link;
         border: 1px solid $color-link;
       }
-    }
-
-    .button-own:hover {
-      cursor: auto;
-      color: $color-link;
-      background: $color-light;
-      border: 1px solid $color-link;
     }
 
     .card__book-skin {

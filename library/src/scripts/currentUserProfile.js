@@ -22,5 +22,18 @@ export function currentUserProfile(currentUser) {
 
   if (currentUser.profile.books.length === 0) {
     listBooks.innerHTML = ''
+  } else {
+    listBooks.innerHTML = ''
+
+    for (let key of currentUser.profile.books) {
+      let elem = document.createElement('li')
+      elem.classList.add('list_books__item')
+      elem.innerHTML = `${key.name}, ${key.author}`
+      listBooks.append(elem)
+    }
   }
+
+  let jsonStr = JSON.stringify(currentUser);
+    
+  localStorage.setItem(`${currentUser.firstName} ${currentUser.lastName}`, jsonStr);
 }

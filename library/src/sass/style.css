@@ -1113,15 +1113,15 @@ h3 {
   color: #BB945F;
   border: 1px solid #BB945F;
 }
-.favorites__content .favorites__content__cards .card__button:hover {
-  color: #0C0C0E;
-  background: #BB945F;
-  border: 1px solid #BB945F;
-}
-.favorites__content .favorites__content__cards .button-own:hover {
+.favorites__content .favorites__content__cards .card__button.own:hover {
   cursor: auto;
   color: #BB945F;
   background: #FFFFFF;
+  border: 1px solid #BB945F;
+}
+.favorites__content .favorites__content__cards .card__button:hover {
+  color: #0C0C0E;
+  background: #BB945F;
   border: 1px solid #BB945F;
 }
 .favorites__content .favorites__content__cards .card__book-skin {

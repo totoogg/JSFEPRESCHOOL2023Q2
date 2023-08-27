@@ -69,6 +69,9 @@ const profileModalCross = document.querySelector('.profile__cross')
 const profileModalCardNumber = document.querySelector('.card__number')
 const profileModalCardCopy = document.querySelector('.card__copy')
 
+const modalBuyCard = document.querySelector('.buy_card')
+const modalBuyCardCross = document.querySelector('.buy_card__cross')
+
 
 //--------------Burger---------------------
 
@@ -98,6 +101,7 @@ wrapperBurger.addEventListener('click', e => {
     modalRegister.classList.add('display-none');
     modalLogin.classList.add('display-none');
     profileModal.classList.add('display-none')
+    modalBuyCard.classList.add('display-none')
   }
 })
 
@@ -206,7 +210,32 @@ favoriteContentBooks.addEventListener('click', e => {
       body.classList.add('lock');
       modalLogin.classList.toggle('display-none');
     }
+  } else {
+    if (!currentUser.libraryCard) {
+      modalBuyCard.classList.remove('display-none')
+      wrapperBurger.classList.remove('display-none');
+      body.classList.add('lock');
+    } else {
+      if (e.target.classList.contains('card__button')) {
+        let button = e.target
+        button.classList.add('own')
+        button.innerHTML = 'Own'
+        let book = {
+          name: button.offsetParent.children[1].innerHTML,
+          author: button.offsetParent.children[2].innerHTML.slice(3),
+        }
+        currentUser.profile.books.push(book)
+
+        currentUserProfile(currentUser)
+      }
+    }
   }
+})
+
+modalBuyCardCross.addEventListener('click', () => {
+  modalBuyCard.classList.add('display-none')
+  wrapperBurger.classList.add('display-none');
+  body.classList.remove('lock');
 })
 
 
