@@ -642,6 +642,168 @@
       }
     }
 
+    .buy_card {
+      width: 640px;
+      height: 540px;
+      position: fixed;
+      z-index: 6;
+      background-color: $color-light;
+      display: flex;
+      flex-direction: column;
+      top: calc(50% - 270px);
+      left: calc(50% - 320px);
+
+      .buy_card__cross {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        z-index: 6;
+        cursor: pointer;
+        display: block;
+
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $color-light;
+         
+
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+          }
+
+          &:last-child {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .buy_card__tittle {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        background-color: $color-background;
+        margin-bottom: 30px;
+
+        .buy_card__tittle__text {
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+          @extend %font-headline;
+          @include font(4rem, 4rem);
+          color: $color-light;
+        }
+      }
+
+      .buy_card__content {
+        display: flex;
+        justify-content: center;
+
+        .buy_card__content__form {
+          display: flex;
+          flex-direction: column;
+          width: 200px;
+
+          .form__card_number {
+            @extend %font-text;
+            @include font(1.5rem, 2rem);
+            letter-spacing: 0.3px;
+            margin-bottom: 10px;
+          }
+
+          .form__card_number__error {
+            height: 10px;
+            color: red;
+            @extend %font-text;
+            @include font(1rem, 1rem);
+            letter-spacing: 0.3px;
+          }
+
+          .form__card_number_input {
+            height: 20px;
+            border: 1px solid $color-link;
+            padding: 0 5px;
+  
+            &:hover {
+              border: 2px solid $color-link;
+            }
+  
+            &:focus {
+              outline-color: $color-link;
+            }
+          }
+
+          .expiration_code {
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+
+            .expiration {
+              width: 45px;
+            }
+          }
+
+          .cvc {
+            width: 45px;
+          }
+
+          .form_footer {
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 188px;
+            
+            .form_footer__button {
+              background-color: $color-light;
+              width: 75px;
+              height: 30px;
+              border-radius: 2px;
+              border: 1px solid #0C0C0E;
+              font-family: Inter;
+              font-size: 10px;
+              font-weight: 700;
+              letter-spacing: 1px;
+              cursor: pointer;
+
+              &:hover {
+                color: $color-background;
+                background: $color-link;
+                border: 1px solid $color-link;
+              }
+            }
+
+            .form_footer__cost {
+              @extend %font-text;
+              @include font(2rem, 2rem, 700);
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            }
+          }
+        }
+
+        .buy_card__content__text {
+          width: 330px;
+          color: $color-placeholder;
+          @extend %font-text;
+          @include font(1.5rem, 2rem);
+          letter-spacing: 2px;
+          padding-left: 40px;
+        }
+      }
+
+      &.display-none {
+        display: none;
+      }
+    }
+
     .tablet__wrapper {
       display: none;
       display: block;

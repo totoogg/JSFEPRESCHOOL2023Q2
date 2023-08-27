@@ -2,11 +2,11 @@
   transition: all 0.3s ease-out;
 }
 
-.header .header__wrapper .profile .profile__content .profile__content__tittle, .header .header__wrapper .header__modal__login .modal__title__login, .header .header__wrapper .header__modal .modal__title, .welcome__text, h3, h2, h1 {
+.header .header__wrapper .buy_card .buy_card__tittle .buy_card__tittle__text, .header .header__wrapper .profile .profile__content .profile__content__tittle, .header .header__wrapper .header__modal__login .modal__title__login, .header .header__wrapper .header__modal .modal__title, .welcome__text, h3, h2, h1 {
   font-family: "Forum", serif;
 }
 
-.library-card .library-card__content .digital-card .library-form .digit-button .info-reader .info-reader__block .info-reader__block__title, .contacts__content .contacts__text__director, .contacts__content .contacts__text__address, .favorites__content .favorites__content__cards .card__button, .header .header__wrapper .profile .profile__content .profile__content__card, .header .header__wrapper .profile .profile__content .rented_books .list_books .list_books__item, .header .header__wrapper .profile .profile__content .profile__content__rented, .header .header__wrapper .profile .profile__content .profile__content__info-reader .info-reader__block .info-reader__block__count, .header .header__wrapper .profile .profile__content .profile__content__info-reader .info-reader__block .info-reader__block__title, .header .header__wrapper .profile .profile__icon .icon__full_name, .header .header__wrapper .profile .profile__icon .icon__sqrt, .header .header__wrapper .header__modal__login .modal__text__login .modal__text__link__login .link__register, .header .header__wrapper .header__modal__login .modal__text__login .modal__text__register, .header .header__wrapper .header__modal__login .modal__form__login .form__input__error__login, .header .header__wrapper .header__modal__login .modal__form__login, .header .header__wrapper .header__modal .modal__text .modal__text__link .link__login, .header .header__wrapper .header__modal .modal__text .modal__text__login, .header .header__wrapper .header__modal .modal__form .form__input__error, .header .header__wrapper .header__modal .modal__form, .header .header__wrapper .header__content .header__drop-menu .drop-menu__text, .header .header__wrapper .header__content .header__drop-menu .drop-menu__title, .header .header__wrapper .header__content .header__profile .user-visit, .header .header__wrapper .header__content .header__navigation .navigation .navigation__item__link, body {
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader .info-reader__block .info-reader__block__title, .contacts__content .contacts__text__director, .contacts__content .contacts__text__address, .favorites__content .favorites__content__cards .card__button, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__text, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form_footer .form_footer__cost, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number__error, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number, .header .header__wrapper .profile .profile__content .profile__content__card, .header .header__wrapper .profile .profile__content .rented_books .list_books .list_books__item, .header .header__wrapper .profile .profile__content .profile__content__rented, .header .header__wrapper .profile .profile__content .profile__content__info-reader .info-reader__block .info-reader__block__count, .header .header__wrapper .profile .profile__content .profile__content__info-reader .info-reader__block .info-reader__block__title, .header .header__wrapper .profile .profile__icon .icon__full_name, .header .header__wrapper .profile .profile__icon .icon__sqrt, .header .header__wrapper .header__modal__login .modal__text__login .modal__text__link__login .link__register, .header .header__wrapper .header__modal__login .modal__text__login .modal__text__register, .header .header__wrapper .header__modal__login .modal__form__login .form__input__error__login, .header .header__wrapper .header__modal__login .modal__form__login, .header .header__wrapper .header__modal .modal__text .modal__text__link .link__login, .header .header__wrapper .header__modal .modal__text .modal__text__login, .header .header__wrapper .header__modal .modal__form .form__input__error, .header .header__wrapper .header__modal .modal__form, .header .header__wrapper .header__content .header__drop-menu .drop-menu__text, .header .header__wrapper .header__content .header__drop-menu .drop-menu__title, .header .header__wrapper .header__content .header__profile .user-visit, .header .header__wrapper .header__content .header__navigation .navigation .navigation__item__link, body {
   font-family: "Inter", sans-serif;
 }
 
@@ -663,6 +663,149 @@ h3 {
   cursor: pointer;
 }
 .header .header__wrapper .profile.display-none {
+  display: none;
+}
+.header .header__wrapper .buy_card {
+  width: 640px;
+  height: 540px;
+  position: fixed;
+  z-index: 6;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  top: calc(50% - 270px);
+  left: calc(50% - 320px);
+}
+.header .header__wrapper .buy_card .buy_card__cross {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 25px;
+  top: 25px;
+  z-index: 6;
+  cursor: pointer;
+  display: block;
+}
+.header .header__wrapper .buy_card .buy_card__cross span {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #FFFFFF;
+}
+.header .header__wrapper .buy_card .buy_card__cross span:first-child {
+  transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+.header .header__wrapper .buy_card .buy_card__cross span:last-child {
+  bottom: calc(50% - 1px);
+  transform: rotate(45deg);
+}
+.header .header__wrapper .buy_card .buy_card__tittle {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  background-color: #0C0C0E;
+  margin-bottom: 30px;
+}
+.header .header__wrapper .buy_card .buy_card__tittle .buy_card__tittle__text {
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  font-size: 4rem;
+  line-height: 4rem;
+  font-weight: normal;
+  color: #FFFFFF;
+}
+.header .header__wrapper .buy_card .buy_card__content {
+  display: flex;
+  justify-content: center;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  margin-bottom: 10px;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number__error {
+  height: 10px;
+  color: red;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number_input {
+  height: 20px;
+  border: 1px solid #BB945F;
+  padding: 0 5px;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number_input:hover {
+  border: 2px solid #BB945F;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number_input:focus {
+  outline-color: #BB945F;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .expiration_code {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .expiration_code .expiration {
+  width: 45px;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .cvc {
+  width: 45px;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form_footer {
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  width: 188px;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form_footer .form_footer__button {
+  background-color: #FFFFFF;
+  width: 75px;
+  height: 30px;
+  border-radius: 2px;
+  border: 1px solid #0C0C0E;
+  font-family: Inter;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form_footer .form_footer__button:hover {
+  color: #0C0C0E;
+  background: #BB945F;
+  border: 1px solid #BB945F;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form_footer .form_footer__cost {
+  font-size: 2rem;
+  line-height: 2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+.header .header__wrapper .buy_card .buy_card__content .buy_card__content__text {
+  width: 330px;
+  color: #8E8E8E;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: normal;
+  letter-spacing: 2px;
+  padding-left: 40px;
+}
+.header .header__wrapper .buy_card.display-none {
   display: none;
 }
 .header .header__wrapper .tablet__wrapper {

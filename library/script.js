@@ -496,3 +496,8 @@ profileModalCardCopy.addEventListener('click', () => {
   document.execCommand("copy")
   document.getSelection().removeAllRanges();
 })
+
+
+//--------------Profile---------------------
+
+
