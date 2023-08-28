@@ -102,6 +102,10 @@
               outline-color: $color-link;
             }
           }
+
+          & input:disabled {
+            background-color: $color-light;
+          }
         }
 
         .digit-button {
@@ -149,7 +153,7 @@
             font-size: 2rem;
             font-weight: bold;
             letter-spacing: 1px;
-            margin-bottom: 30px;
+            margin-bottom: 10px;
             cursor: pointer;
   
             &:hover {
@@ -161,6 +165,16 @@
             &.display-none {
               display: none;
             }
+          }
+
+          .info-reader__error {
+            height: 10px;
+            margin-bottom: 10px;
+            color: red;
+            @extend %font-text;
+            @include font(1rem, 1rem);
+            letter-spacing: 0.3px;
+            text-align: center;
           }
 
           &.information {
@@ -203,7 +217,6 @@
       .get-digital-card__buttons {
         display: flex;
         justify-content: space-between;
-        width: 170px;
 
         .get-digital-card__buttons__link {
           width: 75px;
@@ -223,6 +236,14 @@
             color: $color-background;
             background: $color-link;
             border: 1px solid $color-link;
+          }
+        }
+
+        .digital__singup {
+          margin-right: 20px;
+
+          &.display-none {
+            display: none;
           }
         }
       }

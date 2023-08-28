@@ -5,6 +5,7 @@ const visitCount = document.querySelector('.visit__count');
 const bonusesCount = document.querySelector('.bonuses__count');
 const booksCount = document.querySelector('.books__count');
 const listBooks = document.querySelector('.list_books');
+const digitalFormBooks = document.querySelector('.info-reader__block__title.books__count')
 
 export function currentUserProfile(currentUser) {
 
@@ -19,6 +20,7 @@ export function currentUserProfile(currentUser) {
   bonusesCount.innerHTML = `${currentUser.profile.bonuses}`
 
   booksCount.innerHTML = `${currentUser.profile.books.length}`
+  digitalFormBooks.innerHTML = `${currentUser.profile.books.length}`
 
   if (currentUser.profile.books.length === 0) {
     listBooks.innerHTML = ''

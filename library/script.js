@@ -4,6 +4,7 @@ import {getUserLocalStorage} from './src/scripts/userLocal.js'
 import {randomNumberCard} from './src/scripts/randomNumber.js'
 import {pageLogOut} from './src/scripts/pageLogOut.js'
 import {currentUserProfile} from './src/scripts/currentUserProfile.js'
+import {loginUser} from './src/scripts/loginUser.js'
 
 const body = document.body;
 
@@ -63,6 +64,10 @@ const digitalFormButton = document.querySelector('.form-button')
 const digitalFormInfo = document.querySelector('.info-reader')
 const digitalFormNumberCard = document.querySelector('.form__number-card')
 const digitalFormName = document.querySelector('.form__reader-name')
+const digitalFormVisit = document.querySelector('.info-reader__block__title.visit__count')
+const digitalFormBonuses = document.querySelector('.info-reader__block__title.bonuses__count')
+const digitalFormBooks = document.querySelector('.info-reader__block__title.books__count')
+const digitError = document.querySelector('.info-reader__error')
 
 const profileModal = document.querySelector('.profile')
 const profileModalCross = document.querySelector('.profile__cross')
@@ -71,6 +76,9 @@ const profileModalCardCopy = document.querySelector('.card__copy')
 
 const modalBuyCard = document.querySelector('.buy_card')
 const modalBuyCardCross = document.querySelector('.buy_card__cross')
+const modalBuyCardButton = document.querySelector('.form_footer__button')
+const modalBuyCardInput = document.querySelectorAll('.buy_card__content__form input')
+const modalBuyCardInputError = document.querySelectorAll('.form__card_number__error')
 
 
 //--------------Burger---------------------
@@ -382,6 +390,8 @@ modalButtonRegister.addEventListener('click', () => {
     getUserLocalStorage(`${modalFirstName.value.toLowerCase()} ${modalLastName.value.toLowerCase()}`)
 
     currentUserProfile(currentUser)
+
+    loginUser(currentUser)
   }
 })
 
@@ -425,9 +435,19 @@ modalLoginLinkRegister.addEventListener('click', () => {
 })
 
 digitalLogin.addEventListener('click', () => {
-  wrapperBurger.classList.toggle('display-none');
-  body.classList.toggle('lock');
-  modalLogin.classList.toggle('display-none');
+  if (!login) {
+    wrapperBurger.classList.toggle('display-none');
+    body.classList.toggle('lock');
+    modalLogin.classList.toggle('display-none');
+  } else {
+    profileModal.classList.remove('display-none')
+    navigation.classList.remove('active');
+    navigationBurger.classList.remove('active');
+    modalRegister.classList.add('display-none')
+    dropMenu.classList.remove('drop-menu__active');
+    wrapperBurger.classList.remove('display-none');
+    body.classList.add('lock');
+  }
 })
 
 modalInputLogin.forEach((x, i) => {
@@ -477,6 +497,8 @@ modalButtonLogin.addEventListener('click', () => {
 
           currentUserProfile(currentUser)
 
+          loginUser(currentUser)
+
           return
         }
       }
@@ -498,6 +520,9 @@ digitalFormButton.addEventListener('click', () => {
     digitalFormInfo.classList.remove('display-none')
     digitalFormButtonWrapper.classList.add('information')
     digitalFormButton.classList.add('display-none')
+    digitalFormVisit.innerHTML = `${currentUser.profile.visit}`
+    digitalFormBonuses.innerHTML = `${currentUser.profile.bonuses}`
+    digitalFormBooks.innerHTML = `${currentUser.profile.books.length}`
 
     setTimeout(() => {
       digitalFormInfo.classList.add('display-none')
@@ -506,7 +531,17 @@ digitalFormButton.addEventListener('click', () => {
       digitalFormNumberCard.value = ''
       digitalFormName.value = ''
     }, 10000)
+  } else {
+    digitError.innerHTML = `Пользователь не найден.`
   }
+})
+
+digitalFormName.addEventListener('focus', () => {
+  digitError.innerHTML = ``
+})
+
+digitalFormNumberCard.addEventListener('focus', () => {
+  digitError.innerHTML = ``
 })
 
 
@@ -527,6 +562,95 @@ profileModalCardCopy.addEventListener('click', () => {
 })
 
 
-//--------------Profile---------------------
+//--------------Modal buy card---------------------
 
 
+modalBuyCardInput.forEach((x, i) => {
+  x.addEventListener('blur', () => {
+    if (x.value.length === 0) {
+      if (i <= 1) {
+        modalBuyCardInputError[i].innerHTML = 'Пожалуйста, заполните поле.';
+      } else {
+        modalBuyCardInputError[i - 1].innerHTML = 'Пожалуйста, заполните поле.';
+      }
+    } else if (x.id === 'card_number') {
+      let currentInput = x.value.split('').filter(x => x !== ' ').join('')
+      if (isNaN(currentInput) || typeof +currentInput !== 'number' || currentInput.length !== 16) {
+        modalBuyCardInputError[i].innerHTML = 'Поле должно содержать 16 цифр.';
+      }
+    } else if (x.id === 'expiration' || x.id === 'expiration_2') {
+      let currentInput = x.value.split('').filter(x => x !== ' ').join('')
+      if (isNaN(currentInput) || typeof +currentInput !== 'number' || currentInput.length !== 2) {
+        if (i === 1) {
+          modalBuyCardInputError[i].innerHTML = 'Поля должны содержать 2 цифры.';
+        } else {
+          modalBuyCardInputError[i - 1].innerHTML = 'Поля должны содержать 2 цифры.';
+        }
+      }
+    } else if (x.id === 'cvc') {
+      let currentInput = x.value.split('').filter(x => x !== ' ').join('')
+      if (isNaN(currentInput) || typeof +currentInput !== 'number' || currentInput.length !== 3) {
+        modalBuyCardInputError[i - 1].innerHTML = 'Поле должно содержать 3 цифры.'
+      }
+    }
+  })
+
+  x.addEventListener('focus', () => {
+    if (i <= 1) {
+      modalBuyCardInputError[i].innerHTML = '';
+    } else {
+      modalBuyCardInputError[i - 1].innerHTML = '';
+    }
+  })
+})
+
+modalBuyCardButton.addEventListener('click', () => {
+  event.preventDefault();
+
+  modalBuyCardInput.forEach((x, i) => {
+    if (x.value.length === 0) {
+      if (i <= 1) {
+        modalBuyCardInputError[i].innerHTML = 'Пожалуйста, заполните поле.';
+      } else {
+        modalBuyCardInputError[i - 1].innerHTML = 'Пожалуйста, заполните поле.';
+      }
+    } else if (x.id === 'card_number') {
+      let currentInput = x.value.split('').filter(x => x !== ' ').join('')
+      if (isNaN(currentInput) || typeof +currentInput !== 'number' || currentInput.length !== 16) {
+        modalBuyCardInputError[i].innerHTML = 'Поле должно содержать 16 цифр.';
+      }
+    } else if (x.id === 'expiration' || x.id === 'expiration_2') {
+      let currentInput = x.value.split('').filter(x => x !== ' ').join('')
+      if (isNaN(currentInput) || typeof +currentInput !== 'number' || currentInput.length !== 2) {
+        if (i === 1) {
+          modalBuyCardInputError[i].innerHTML = 'Поля должны содержать 2 цифры.';
+        } else {
+          modalBuyCardInputError[i - 1].innerHTML = 'Поля должны содержать 2 цифры.';
+        }
+      }
+    } else if (x.id === 'cvc') {
+      let currentInput = x.value.split('').filter(x => x !== ' ').join('')
+      if (isNaN(currentInput) || typeof +currentInput !== 'number' || currentInput.length !== 3) {
+        modalBuyCardInputError[i - 1].innerHTML = 'Поле должно содержать 3 цифры.'
+      }
+    }
+  })
+
+  let buy = true
+
+  modalBuyCardInputError.forEach(x => {
+    if (x.innerHTML !== '') {
+      buy = false
+    }
+  })
+
+  if (buy) {
+    currentUser.libraryCard = true
+
+    currentUserProfile(currentUser)
+
+    modalBuyCard.classList.add('display-none')
+    wrapperBurger.classList.add('display-none');
+    body.classList.remove('lock');
+  }
+})

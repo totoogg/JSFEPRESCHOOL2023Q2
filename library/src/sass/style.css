@@ -6,7 +6,7 @@
   font-family: "Forum", serif;
 }
 
-.library-card .library-card__content .digital-card .library-form .digit-button .info-reader .info-reader__block .info-reader__block__title, .contacts__content .contacts__text__director, .contacts__content .contacts__text__address, .favorites__content .favorites__content__cards .card__button, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__text, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form_footer .form_footer__cost, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number__error, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number, .header .header__wrapper .profile .profile__content .profile__content__card, .header .header__wrapper .profile .profile__content .rented_books .list_books .list_books__item, .header .header__wrapper .profile .profile__content .profile__content__rented, .header .header__wrapper .profile .profile__content .profile__content__info-reader .info-reader__block .info-reader__block__count, .header .header__wrapper .profile .profile__content .profile__content__info-reader .info-reader__block .info-reader__block__title, .header .header__wrapper .profile .profile__icon .icon__full_name, .header .header__wrapper .profile .profile__icon .icon__sqrt, .header .header__wrapper .header__modal__login .modal__text__login .modal__text__link__login .link__register, .header .header__wrapper .header__modal__login .modal__text__login .modal__text__register, .header .header__wrapper .header__modal__login .modal__form__login .form__input__error__login, .header .header__wrapper .header__modal__login .modal__form__login, .header .header__wrapper .header__modal .modal__text .modal__text__link .link__login, .header .header__wrapper .header__modal .modal__text .modal__text__login, .header .header__wrapper .header__modal .modal__form .form__input__error, .header .header__wrapper .header__modal .modal__form, .header .header__wrapper .header__content .header__drop-menu .drop-menu__text, .header .header__wrapper .header__content .header__drop-menu .drop-menu__title, .header .header__wrapper .header__content .header__profile .user-visit, .header .header__wrapper .header__content .header__navigation .navigation .navigation__item__link, body {
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader__error, .library-card .library-card__content .digital-card .library-form .digit-button .info-reader .info-reader__block .info-reader__block__title, .contacts__content .contacts__text__director, .contacts__content .contacts__text__address, .favorites__content .favorites__content__cards .card__button, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__text, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form_footer .form_footer__cost, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number__error, .header .header__wrapper .buy_card .buy_card__content .buy_card__content__form .form__card_number, .header .header__wrapper .profile .profile__content .profile__content__card, .header .header__wrapper .profile .profile__content .rented_books .list_books .list_books__item, .header .header__wrapper .profile .profile__content .profile__content__rented, .header .header__wrapper .profile .profile__content .profile__content__info-reader .info-reader__block .info-reader__block__count, .header .header__wrapper .profile .profile__content .profile__content__info-reader .info-reader__block .info-reader__block__title, .header .header__wrapper .profile .profile__icon .icon__full_name, .header .header__wrapper .profile .profile__icon .icon__sqrt, .header .header__wrapper .header__modal__login .modal__text__login .modal__text__link__login .link__register, .header .header__wrapper .header__modal__login .modal__text__login .modal__text__register, .header .header__wrapper .header__modal__login .modal__form__login .form__input__error__login, .header .header__wrapper .header__modal__login .modal__form__login, .header .header__wrapper .header__modal .modal__text .modal__text__link .link__login, .header .header__wrapper .header__modal .modal__text .modal__text__login, .header .header__wrapper .header__modal .modal__form .form__input__error, .header .header__wrapper .header__modal .modal__form, .header .header__wrapper .header__content .header__drop-menu .drop-menu__text, .header .header__wrapper .header__content .header__drop-menu .drop-menu__title, .header .header__wrapper .header__content .header__profile .user-visit, .header .header__wrapper .header__content .header__navigation .navigation .navigation__item__link, body {
   font-family: "Inter", sans-serif;
 }
 
@@ -1417,6 +1417,9 @@ h3 {
 .library-card .library-card__content .digital-card .library-form .library-form__container .form__number-card:focus {
   outline-color: #BB945F;
 }
+.library-card .library-card__content .digital-card .library-form .library-form__container input:disabled {
+  background-color: #FFFFFF;
+}
 .library-card .library-card__content .digital-card .library-form .digit-button {
   padding-top: 5px;
 }
@@ -1458,7 +1461,7 @@ h3 {
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 1px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 .library-card .library-card__content .digital-card .library-form .digit-button .form-button:hover {
@@ -1468,6 +1471,16 @@ h3 {
 }
 .library-card .library-card__content .digital-card .library-form .digit-button .form-button.display-none {
   display: none;
+}
+.library-card .library-card__content .digital-card .library-form .digit-button .info-reader__error {
+  height: 10px;
+  margin-bottom: 10px;
+  color: red;
+  font-size: 1rem;
+  line-height: 1rem;
+  font-weight: normal;
+  letter-spacing: 0.3px;
+  text-align: center;
 }
 .library-card .library-card__content .digital-card .library-form .digit-button.information {
   padding-top: 0;
@@ -1507,7 +1520,6 @@ h3 {
 .library-card .library-card__content .get-digital-card .get-digital-card__buttons {
   display: flex;
   justify-content: space-between;
-  width: 170px;
 }
 .library-card .library-card__content .get-digital-card .get-digital-card__buttons .get-digital-card__buttons__link {
   width: 75px;
@@ -1527,6 +1539,12 @@ h3 {
   color: #0C0C0E;
   background: #BB945F;
   border: 1px solid #BB945F;
+}
+.library-card .library-card__content .get-digital-card .get-digital-card__buttons .digital__singup {
+  margin-right: 20px;
+}
+.library-card .library-card__content .get-digital-card .get-digital-card__buttons .digital__singup.display-none {
+  display: none;
 }
 
 .footer {
