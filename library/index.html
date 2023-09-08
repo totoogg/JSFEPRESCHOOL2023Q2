@@ -26,6 +26,7 @@
         </nav>
         <div class="table-wrapper-burger">
           <div class="header__profile">
+            <div class="user-visit display-none"></div>
             <img class="profile-icon" src="src/img/icons/icon_profile.svg" alt="profile">
           </div>
           <div class="header__burger">
@@ -33,6 +34,136 @@
             <span></span>
             <span></span>
           </div>
+        </div>
+        <div class="header__drop-menu">
+          <h5 class="drop-menu__title">Profile</h5>
+          <p class="drop-menu__text text-1">Log In</p>
+          <p class="drop-menu__text text-2">Register</p>
+        </div>
+      </div>
+      <div class="header__modal display-none">
+        <div class="modal__cross">
+          <span></span>
+          <span></span>
+        </div>
+        <h5 class="modal__title">REGISTER</h5>
+        <form action="#" method="post" class="modal__form">
+          <label for="first" class="form__name">First name</label>
+          <input type="text" name="first" id="first" class="form__input-name">
+          <div class="form__input__error"></div>
+          <label for="second" class="form__name">Last name</label>
+          <input type="text" name="second" id="second" class="form__input-name">
+          <div class="form__input__error"></div>
+          <label for="mail" class="form__name">E-mail</label>
+          <input type="email" name="mail" id="mail" class="form__input-name">
+          <div class="form__input__error error__mail"></div>
+          <label for="password" class="form__name">Password</label>
+          <input type="password" name="password" id="password" class="form__input-name">
+          <div class="form__input__error error__password"></div>
+          <button class="form__button">Sign Up</button>
+        </form>  
+        <div class="modal__text">
+          <p class="modal__text__login">Already have an account?</p>
+          <p class="modal__text__link"><a href="#" class="link__login">Login</a></p>
+        </div>
+      </div>
+      <div class="header__modal__login display-none">
+        <div class="modal__cross__login">
+          <span></span>
+          <span></span>
+        </div>
+        <h5 class="modal__title__login">LOGIN</h5>
+        <form action="#" method="post" class="modal__form__login">
+          <label for="first__login" class="form__name__login">E-mail or readers card</label>
+          <input type="text" name="first__login" id="first__login" class="form__input-name__login">
+          <div class="form__input__error__login readers-card__error"></div>
+          <label for="password__login" class="form__name__login">Password</label>
+          <input type="password" name="password__login" id="password__login" class="form__input-name__login">
+          <div class="form__input__error__login error__password"></div>
+          <button class="form__button__login">Log In</button>
+        </form>  
+        <div class="modal__text__login">
+          <p class="modal__text__register">Don’t have an account?</p>
+          <p class="modal__text__link__login"><a href="#" class="link__register">Register</a></p>
+        </div>
+      </div>
+      <div class="profile display-none">
+        <div class="profile__cross">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="profile__icon">
+          <div class="icon__sqrt">JD</div>
+          <div class="icon__full_name">John Doe</div>
+        </div>
+        <div class="profile__content">
+          <h5 class="profile__content__tittle">MY PROFILE</h5>
+          <div class="profile__content__info-reader">
+            <div class="info-reader__block visit">
+              <p class="info-reader__block__title">Visit</p>
+              <div class="info-reader__block__img"><img src="/src/img/icons/visits.svg" alt="visit"></div>
+              <p class="info-reader__block__count visit__count">0</p>
+            </div>
+            <div class="info-reader__block bonuses">
+              <p class="info-reader__block__title">Bonuses</p>
+              <div class="info-reader__block__img"><img src="/src/img/icons/bonuses.svg" alt="bonuses"></div>
+              <p class="info-reader__block__count bonuses__count">0</p>
+            </div>
+            <div class="info-reader__block books">
+              <p class="info-reader__block__title">Books</p>
+              <div class="info-reader__block__img"><img src="/src/img/icons/books.svg" alt="books"></div>
+              <p class="info-reader__block__count books__count">0</p>
+            </div>
+          </div>
+          <p class="profile__content__rented">Rented books</p>
+          <div class="rented_books">
+            <ul class="list_books">
+              <li class="list_books__item">The Last Queen, Clive Irving</li>
+            </ul>
+          </div>
+          <div class="profile__content__card">
+            <p class="card__tittle">Card number</p>
+            <p class="card__number">F00234030</p>
+            <img class="card__copy" src="./src/img/icons/copy.svg" alt="copy">
+          </div>
+        </div>
+      </div>
+      <div class="buy_card display-none">
+        <div class="buy_card__cross">
+          <span></span>
+          <span></span>
+        </div>
+        <div class="buy_card__tittle"><h5 class="buy_card__tittle__text">Buy a library card</h5></div>
+        <div class="buy_card__content">
+          <form class="buy_card__content__form" action="#" method="post">
+            <label for="card_number" class="form__card_number">Bank card number</label>
+            <input type="text" name="card_number" id="card_number" class="form__card_number_input">
+            <div class="form__card_number__error"></div>
+            <label for="expiration" class="form__card_number">Expiration code</label>
+            <div class="expiration_code">
+              <input type="text" name="expiration" id="expiration" class="form__card_number_input expiration">
+              <input type="text" name="expiration_2" id="expiration_2" class="form__card_number_input expiration">
+            </div>
+            <div class="form__card_number__error"></div>
+            <label for="cvc" class="form__card_number">CVC</label>
+            <input type="text" name="cvc" id="cvc" class="form__card_number_input cvc">
+            <div class="form__card_number__error"></div>
+            <label for="cardholder" class="form__card_number">Cardholder name</label>
+            <input type="text" name="cardholder" id="cardholder" class="form__card_number_input">
+            <div class="form__card_number__error"></div>
+            <label for="postal_code" class="form__card_number">Postal code</label>
+            <input type="text" name="postal_code" id="postal_code" class="form__card_number_input">
+            <div class="form__card_number__error"></div>
+            <label for="city" class="form__card_number">City / Town</label>
+            <input type="text" name="city" id="city" class="form__card_number_input">
+            <div class="form__card_number__error"></div>
+            <div class="form_footer">
+              <button class="form_footer__button">Buy</button>
+              <p class="form_footer__cost">$ 25.00</p>
+            </div>
+          </form>
+          <p class="buy_card__content__text">If you are live, work, attend school, or pay property taxes in New York State, you can get a $25 digital library card right now using this online form. Visitors to New York State can also use this form to apply for a temporary card.
+          </p>
         </div>
       </div>
       <div class="tablet__wrapper display-none"></div>
@@ -132,7 +263,7 @@
             <p class="card__header-bold">The Last Queen</p>
             <p class="card__header-bold">By Clive Irving</p>
             <p class="card__description">A timely and revelatory new biography of Queen Elizabeth (and her family) exploring how the Windsors have evolved and thrived as the modern world has changed around them.</p>
-            <button class="card__button button-own" disabled>Own</button>
+            <button class="card__button">Buy</button>
             <img src="src/img/favorites/winter4.jpg" alt="skin" class="card__book-skin"></div>
           <div class="favorites__content__cards spring-1 display-none">
             <h3 class="card__headline">Staff Picks</h3>
@@ -160,7 +291,7 @@
             <p class="card__header-bold">Dominicana</p>
             <p class="card__header-bold">By Angie Cruz</p>
             <p class="card__description">A fascinating story of a teenage girl who marries a man twice her age with the promise to bring her to America. Her marriage is an opportunity for her family to eventually immigrate. For fans of Isabel Allende and Julia Alvarez.</p>
-            <button class="card__button button-own" disabled>Own</button>
+            <button class="card__button">Buy</button>
             <img src="src/img/favorites/spring4.jpg" alt="skin" class="card__book-skin"></div>
           <div class="favorites__content__cards summer-1 display-none">
             <h3 class="card__headline">Staff Picks</h3>
@@ -298,18 +429,38 @@
             <form action="#" method="post" class="library-form">
               <div class="library-form__container">
                 <h3 class="form-headline">Brooklyn Public Library</h3>
-                <input type="text" name="reader" class="form__reader-name" placeholder="Reader's name " pattern="[-A-Za-z0-9]+">
-                <input type="text" name="number-card" class="form__number-card" placeholder="Card number" pattern="[-A-Za-z0-9]+">
+                <input type="text" name="reader" class="form__reader-name" placeholder="Reader's name">
+                <input type="text" name="number-card" class="form__number-card" placeholder="Card number">
               </div>
-              <button class="form-button">Check the card</button>
+              <div class="digit-button">
+                <div class="info-reader display-none">
+                  <div class="info-reader__block visit">
+                    <p class="info-reader__block__title">Visit</p>
+                    <div class="info-reader__block__img"><img src="/src/img/icons/visits.svg" alt="visit"></div>
+                    <p class="info-reader__block__title visit__count">0</p>
+                  </div>
+                  <div class="info-reader__block bonuses">
+                    <p class="info-reader__block__title">Bonuses</p>
+                    <div class="info-reader__block__img"><img src="/src/img/icons/bonuses.svg" alt="bonuses"></div>
+                    <p class="info-reader__block__title bonuses__count">0</p>
+                  </div>
+                  <div class="info-reader__block books">
+                    <p class="info-reader__block__title">Books</p>
+                    <div class="info-reader__block__img"><img src="/src/img/icons/books.svg" alt="books"></div>
+                    <p class="info-reader__block__title books__count">0</p>
+                  </div>
+                </div>
+                <button class="form-button">Check the card</button>
+                <div class="info-reader__error"></div>
+              </div>
             </form>
           </div>
           <div class="get-digital-card">
             <h3 class="get-digital-card__headline">Get a reader card</h3>
             <p class="get-digital-card__text">You will be able to see a reader card after logging into account or you can register a new account</p>
             <div class="get-digital-card__buttons">
-              <button class="get-digital-card__buttons__link">Sign Up</button>
-              <button class="get-digital-card__buttons__link">Log in</button>
+              <button class="get-digital-card__buttons__link digital__singup">Sign Up</button>
+              <button class="get-digital-card__buttons__link digit__login">Log in</button>
             </div>
           </div>
         </div>
@@ -345,6 +496,6 @@
       </div>
     </div>
   </footer>
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
