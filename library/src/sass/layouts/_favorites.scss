@@ -15,6 +15,12 @@
   height: 24px;
   display: flex;
   justify-content: space-between;
+  @include media-tablet {
+    position: sticky;
+    background-color: $color-light;
+    top: 0;
+    z-index: 2;
+  }
 
   .radio__content {
     display: flex;
@@ -145,10 +151,17 @@
       font-weight: bold;
       letter-spacing: 1px;
 
-      &:disabled {
+      &.own {
         cursor: auto;
         color: $color-link;
         border: 1px solid $color-link;
+
+        &:hover {
+          cursor: auto;
+          color: $color-link;
+          background: $color-light;
+          border: 1px solid $color-link;
+        }
       }
 
       &:hover {
@@ -158,21 +171,37 @@
       }
     }
 
-    .button-own:hover {
-      cursor: auto;
-      color: $color-link;
-      background: $color-light;
-      border: 1px solid $color-link;
-    }
-
     .card__book-skin {
       position: absolute;
       bottom: -1px;
       left: 390px;
+      z-index: 1;
     }
   }
+}
 
-  .display-none {
-    @extend %display-none;
-  }
+.animation {
+  animation: anima 350ms backwards ease-in-out;
+  opacity: 0;
+} 
+
+@keyframes anima {
+  from {opacity: 1;}
+  50% {opacity: 0.5;}
+  to {opacity: 0;}
+}
+
+.visibility {
+  animation: visibl 350ms backwards ease-in-out;
+  opacity: 1;
+} 
+
+@keyframes visibl {
+  from {opacity: 0;}
+  50% {opacity: 0.5;}
+  to {opacity: 1;}
+}
+
+.display-none {
+  @extend %display-none;
 }

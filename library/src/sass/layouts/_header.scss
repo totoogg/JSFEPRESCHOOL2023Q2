@@ -17,6 +17,7 @@
       justify-content: space-between;
       align-items: center;
       width: 652px;
+      position: relative;
       @include media-burger {
         width: 113px;
         z-index: 5;
@@ -25,13 +26,13 @@
       .header__navigation {
         @include media-burger {
           position: absolute;
-          top: 90px;
-          left: -100%;
+          top: 70px;
+          left: -1000%;
           background-color: rgba($color: $color-background, $alpha: 0.8);
         }
 
         &.active {
-          left: calc(100% - 332px);
+          left: calc(100% - 312px);
         }
 
         .navigation {
@@ -75,7 +76,24 @@
       .header__profile {
         display: flex;
         align-items: center;
-        cursor: pointer;      
+        cursor: pointer;
+
+        .user-visit {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 28px;
+          height: 28px;
+          border-radius: 50%;
+          background-color: $color-light;
+          color: $color-link;
+          @extend %font-text;
+          @include font(1.5rem, 2rem);
+        }
+
+        .display-none {
+          display: none;
+        }
       }
 
       .header__burger {
@@ -123,20 +141,680 @@
           }
         }
       }
-    }
-    .tablet__wrapper {
-      display: none;
-      @include media-burger {
-        display: block;
+
+      .header__drop-menu {
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        background-color: rgba($color: $color-background, $alpha: .8);
-        z-index: 4;
+        width: 80px;
+        height: 115px;
+        background-color: $color-light;
+        top: 50px;
+        left: -1000%;
+        z-index: 6;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 5px;
+        
+        &.drop-menu__active {
+          left: calc(100% - 80px);
+          @include media-burger {
+            left: 0; 
+          }
+        }
+
+        .drop-menu__title {
+          @include font (1.5rem, 2rem, bold);
+          @extend %font-text;
+          margin-bottom: 20px;
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            background-color: $color-link;
+            width: 40px;
+            height: 2px;
+            bottom: -5px;
+            left: 4px;
+          }
+        }
+
+        .drop-menu__text {
+          @include font (1.5rem, 2rem);
+          @extend %font-text;
+          margin-bottom: 10px;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-link;
+          }
+        }
+      }
+    }
+
+    .header__modal {
+      position: fixed;
+      width: 250px;
+      height: 382px;
+      z-index: 6;
+      background-color: $color-light;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: calc(50% - 191px);
+      left: calc(50% - 125px);
+      padding-top: 20px;
+
+      .modal__cross {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 6;
+        cursor: pointer;
+        display: block;
+
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $color-background;
+         
+
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+          }
+
+          &:last-child {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+          }
+        }
       }
 
+      .modal__title {
+        @extend %font-headline;
+        @include font (2rem, 2rem, 400);
+        letter-spacing: 0.4px;
+        margin-bottom: 20px;
+      }
+
+      .modal__form {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        @extend %font-text;
+        @include font(1.5rem, 2rem);
+        letter-spacing: 0.3px;
+
+        & > label {
+          margin-bottom: 10px;
+        }
+
+        .form__input__error {
+          height: 10px;
+          color: red;
+          @extend %font-text;
+          @include font(1rem, 1rem);
+          letter-spacing: 0.3px;
+        }
+
+        & > input {
+          height: 20px;
+          border: 1px solid $color-link;
+          padding: 0 5px;
+
+          &:hover {
+            border: 2px solid $color-link;
+          }
+
+          &:focus {
+            outline-color: $color-link;
+          }
+        }
+
+        .form__button {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          background-color: $color-light;
+          width: 75px;
+          height: 30px;
+          border-radius: 2px;
+          border: 1px solid #0C0C0E;
+          font-family: Inter;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-background;
+            background: $color-link;
+            border: 1px solid $color-link;
+          }
+        }
+      }
+
+      .modal__text {
+        width: 164px;
+        height: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-start;
+        margin-left: 25px;
+
+        .modal__text__login {
+          @extend %font-text;
+          @include font(1rem, 1rem);
+        }
+
+        .modal__text__link {
+          @include font(1rem, 1rem);
+
+          .link__login {
+            color: $color-text;
+            @extend %font-text;
+            @include font(1rem, 1rem, bold);
+            letter-spacing: 1px;
+
+            &:hover {
+              color: $color-link;
+            }
+          }
+        }
+      }
+
+      &.display-none {
+        display: none;
+      }
+    }
+
+    .header__modal__login {
+      position: fixed;
+      width: 250px;
+      height: 262px;
+      z-index: 6;
+      background-color: $color-light;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: calc(50% - 191px);
+      left: calc(50% - 125px);
+      padding-top: 20px;
+
+      .modal__cross__login {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 6;
+        cursor: pointer;
+        display: block;
+
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $color-background;
+         
+
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+          }
+
+          &:last-child {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .modal__title__login {
+        @extend %font-headline;
+        @include font (2rem, 2rem, 400);
+        letter-spacing: 0.4px;
+        margin-bottom: 20px;
+      }
+
+      .modal__form__login {
+        width: 200px;
+        display: flex;
+        flex-direction: column;
+        @extend %font-text;
+        @include font(1.5rem, 2rem);
+        letter-spacing: 0.3px;
+
+        & > label {
+          margin-bottom: 10px;
+        }
+
+        .form__input__error__login {
+          height: 10px;
+          color: red;
+          @extend %font-text;
+          @include font(1rem, 1rem);
+          letter-spacing: 0.3px;
+        }
+
+        & > input {
+          height: 20px;
+          border: 1px solid $color-link;
+          padding: 0 5px;
+
+          &:hover {
+            border: 2px solid $color-link;
+          }
+
+          &:focus {
+            outline-color: $color-link;
+          }
+        }
+
+        .form__button__login {
+          margin-top: 10px;
+          margin-bottom: 10px;
+          background-color: $color-light;
+          width: 75px;
+          height: 30px;
+          border-radius: 2px;
+          border: 1px solid #0C0C0E;
+          font-family: Inter;
+          font-size: 10px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          cursor: pointer;
+
+          &:hover {
+            color: $color-background;
+            background: $color-link;
+            border: 1px solid $color-link;
+          }
+        }
+      }
+
+      .modal__text__login {
+        width: 164px;
+        height: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-self: flex-start;
+        margin-left: 25px;
+
+        .modal__text__register {
+          @extend %font-text;
+          @include font(1rem, 1rem);
+        }
+
+        .modal__text__link__login {
+          @include font(1rem, 1rem);
+
+          .link__register {
+            color: $color-text;
+            @extend %font-text;
+            @include font(1rem, 1rem, bold);
+            letter-spacing: 1px;
+
+            &:hover {
+              color: $color-link;
+            }
+          }
+        }
+      }
+
+      &.display-none {
+        display: none;
+      }
+    }
+
+    .profile {
+      width: 600px;
+      height: 400px;
+      position: fixed;
+      z-index: 6;
+      background-color: $color-light;
+      display: flex;
+      top: calc(50% - 200px);
+      left: calc(50% - 300px);
+
+      .profile__cross {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        z-index: 6;
+        cursor: pointer;
+        display: block;
+
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $color-background;
+         
+
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+          }
+
+          &:last-child {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .profile__icon {
+        width: 170px;
+        background-color: $color-background;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .icon__sqrt {
+          width: 80px;
+          height: 80px;
+          background-color: $color-light;
+          color: $color-link;
+          @extend %font-text;
+          @include font(2rem, 2rem);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 15px;
+        }
+
+        .icon__full_name {
+          width: 120px;
+          min-height: 30px;
+          @extend %font-text;
+          @include font(2rem, 2rem);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: $color-light;
+          word-wrap: break-word;
+        }
+      }
+
+      .profile__content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 20px;
+
+        .profile__content__tittle {
+          letter-spacing: 0.8px;
+          @extend %font-headline;
+          @include font(4rem, 4rem, 400);
+          margin-bottom: 30px;
+        }
+
+        .profile__content__info-reader {
+          width: 237px;
+          height: 81px;
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 18px;
+
+          .info-reader__block {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .info-reader__block__title {
+              letter-spacing: 0.4px;
+              @extend %font-text;
+              @include font(2rem, 2rem);
+            }
+
+            .info-reader__block__img {
+              width: 20px;
+              height: 21px;
+            }
+
+            .info-reader__block__count {
+              letter-spacing: 0.2px;
+              @extend %font-text;
+              @include font(1rem, 2rem);
+            }
+          }
+        }
+
+        .profile__content__rented {
+          @extend %font-text;
+          @include font(2.5rem, 2.5rem);
+          margin-bottom: 27px;
+        }
+
+        .rented_books {
+          width: 390px;
+          height: 90px;
+          overflow-y: auto;
+          margin-bottom: 10px;
+          padding-left: 25px;
+
+          .list_books {
+            display: flex;
+            flex-direction: column;
+
+            .list_books__item {
+              letter-spacing: 2px;
+              @extend %font-text;
+              @include font(2rem, 2rem);
+              margin-bottom: 10px;
+            }
+          }
+        }
+
+        .profile__content__card {
+          display: flex;
+          justify-content: space-between;
+          width: 281px;
+          @extend %font-text;
+          @include font(2rem, 2rem);
+
+          .card__number {
+            color: $color-link;
+          }
+
+          .card__copy {
+            cursor: pointer;
+          }
+        }
+      }
+
+      &.display-none {
+        display: none;
+      }
+    }
+
+    .buy_card {
+      width: 640px;
+      height: 540px;
+      position: fixed;
+      z-index: 6;
+      background-color: $color-light;
+      display: flex;
+      flex-direction: column;
+      top: calc(50% - 270px);
+      left: calc(50% - 320px);
+
+      .buy_card__cross {
+        width: 15px;
+        height: 15px;
+        position: absolute;
+        right: 25px;
+        top: 25px;
+        z-index: 6;
+        cursor: pointer;
+        display: block;
+
+        span {
+          position: absolute;
+          top: calc(50% - 1px);
+          left: 0;
+          width: 100%;
+          height: 3px;
+          background-color: $color-light;
+         
+
+          &:first-child {
+            transform: rotate(-45deg);
+            top: calc(50% - 1px);
+          }
+
+          &:last-child {
+            bottom: calc(50% - 1px);
+            transform: rotate(45deg);
+          }
+        }
+      }
+
+      .buy_card__tittle {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        background-color: $color-background;
+        margin-bottom: 30px;
+
+        .buy_card__tittle__text {
+          letter-spacing: 0.8px;
+          text-transform: uppercase;
+          @extend %font-headline;
+          @include font(4rem, 4rem);
+          color: $color-light;
+        }
+      }
+
+      .buy_card__content {
+        display: flex;
+        justify-content: center;
+
+        .buy_card__content__form {
+          display: flex;
+          flex-direction: column;
+          width: 200px;
+
+          .form__card_number {
+            @extend %font-text;
+            @include font(1.5rem, 2rem);
+            letter-spacing: 0.3px;
+            margin-bottom: 10px;
+          }
+
+          .form__card_number__error {
+            height: 10px;
+            color: red;
+            @extend %font-text;
+            @include font(1rem, 1rem);
+            letter-spacing: 0.3px;
+          }
+
+          .form__card_number_input {
+            height: 20px;
+            border: 1px solid $color-link;
+            padding: 0 5px;
+  
+            &:hover {
+              border: 2px solid $color-link;
+            }
+  
+            &:focus {
+              outline-color: $color-link;
+            }
+          }
+
+          .expiration_code {
+            display: flex;
+            justify-content: space-between;
+            width: 100px;
+
+            .expiration {
+              width: 45px;
+            }
+          }
+
+          .cvc {
+            width: 45px;
+          }
+
+          .form_footer {
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            width: 188px;
+            
+            .form_footer__button {
+              background-color: $color-light;
+              width: 75px;
+              height: 30px;
+              border-radius: 2px;
+              border: 1px solid #0C0C0E;
+              font-family: Inter;
+              font-size: 10px;
+              font-weight: 700;
+              letter-spacing: 1px;
+              cursor: pointer;
+
+              &:hover {
+                color: $color-background;
+                background: $color-link;
+                border: 1px solid $color-link;
+              }
+            }
+
+            .form_footer__cost {
+              @extend %font-text;
+              @include font(2rem, 2rem, 700);
+              letter-spacing: 2px;
+              text-transform: uppercase;
+            }
+          }
+        }
+
+        .buy_card__content__text {
+          width: 330px;
+          color: $color-placeholder;
+          @extend %font-text;
+          @include font(1.5rem, 2rem);
+          letter-spacing: 2px;
+          padding-left: 40px;
+        }
+      }
+
+      &.display-none {
+        display: none;
+      }
+    }
+
+    .tablet__wrapper {
+      display: none;
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: rgba($color: $color-background, $alpha: .5);
+      z-index: 4;
+      
       &.display-none {
         display: none;
       }
