@@ -520,9 +520,9 @@ digitalFormButton.addEventListener('click', () => {
     digitalFormInfo.classList.remove('display-none')
     digitalFormButtonWrapper.classList.add('information')
     digitalFormButton.classList.add('display-none')
-    digitalFormVisit.innerHTML = `${currentUser.profile.visit}`
-    digitalFormBonuses.innerHTML = `${currentUser.profile.bonuses}`
-    digitalFormBooks.innerHTML = `${currentUser.profile.books.length}`
+    digitalFormVisit.innerHTML = `${user.profile.visit}`
+    digitalFormBonuses.innerHTML = `${user.profile.bonuses}`
+    digitalFormBooks.innerHTML = `${user.profile.books.length}`
 
     setTimeout(() => {
       digitalFormInfo.classList.add('display-none')
