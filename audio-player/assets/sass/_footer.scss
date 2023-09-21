@@ -1,0 +1,28 @@
+footer {
+  width: 100%;
+  background-color: #010101;
+  color: azure;
+  font-size: 1.5rem;
+  padding: 10px;
+  
+
+  .wrapper_footer {
+    width: 320px;
+    margin: 0 auto;
+
+    .footer__author {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .rschool {
+        width: 50px;
+      }
+
+      .github {
+        width: 20px;
+      }
+    }
+  }
+}
+

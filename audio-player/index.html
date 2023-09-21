@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JS30</title>
+  <link rel="stylesheet" href="assets/sass/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="wrapper">
+      <div class="header__list">
+        <h1 class="header__list__headline">List of songs:</h1>
+        <ul class="header__list__songs">
+          <li class="song song_1 ">Katy Perry - Dark Horse</li>
+          <li class="song song_2">Maroon 5 - Animals</li>
+          <li class="song song_3 checked_song">Rixton - Me And My Broken Heart</li>
+        </ul>
+      </div>
+    </div>
+  </header>
+  <main>
+    <div class="wrapper">
+      <div class="player">
+        <div class="player__poster"></div>
+        <div class="player__controls">
+          <div class="player__controls__content">
+            <div class="controls__play"></div>
+            <div class="controls__info">
+              <div class="controls__info__author">Rixton</div>
+              <div class="controls__info__name_song">Me And My Broken Heart</div>
+            </div>
+            <div class="controls__switching">
+              <div class="controls__switching__next"></div>
+              <div class="controls__switching__prev"></div>
+            </div>
+          </div>
+          <div class="player__controls__info">
+            <div class="time">
+              <div class="time__end">00:00</div>
+              <div class="time__line">
+                <input type="range" name="range" id="timeline" min="0" max="100" value="0">
+              </div>
+              <div class="time__start">00:00</div>
+            </div>
+            <div class="sound">
+              <div class="sound__button"></div>
+              <input type="range" name="range" id="volume" min="0" max="100" value="100">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="wrapper_footer">
+      <div class="footer__author">
+        <div class="footer__year">2023</div>
+        <div class="footer__link-school"><a href="https://rs.school/js-stage0/" class="link-school"><img src="assets/svg/rs_school.png" alt="rschool" class="rschool"></a></div>
+        <div class="author">Vladimir Goncharov <a href="https://github.com/totoogg?tab=repositories"><img src="assets/svg/github-mark-white.svg" alt="github" class="github"></a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
