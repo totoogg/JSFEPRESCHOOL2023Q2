@@ -209,7 +209,7 @@ body {
   position: absolute;
   transform: rotate(-90deg);
   left: 13px;
-  top: 13px;
+  top: -6px;
   z-index: -1;
   width: 0px;
   height: 15px;
