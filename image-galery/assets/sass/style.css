@@ -15,47 +15,89 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-image: url(../posters/rixton.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  backdrop-filter: blur(10px);
 }
 
-.header__list {
-  margin-top: 20px;
-  width: 320px;
-  background: -webkit-linear-gradient(101deg, rgb(40, 40, 40), rgb(219, 52, 52));
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
-  box-shadow: 0 0 8px #000000;
-  color: azure;
-}
-.header__list .header__list__headline {
-  font-size: 3rem;
-  margin-bottom: 20px;
-}
-.header__list .header__list__songs {
+header {
   width: 100%;
-  padding-left: 10px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.header__list .header__list__songs .song {
-  list-style: none;
-  margin-bottom: 10px;
-  font-size: 1.5rem;
-  font-weight: 400;
+header .wrapper_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1280px;
+}
+header .wrapper_header .header__logo {
+  font-size: 4rem;
+}
+header .wrapper_header .header__form {
+  position: relative;
+  margin-right: 5px;
+}
+header .wrapper_header .header__form .header__form__input {
+  width: 350px;
+  border-radius: 25px;
+  height: 40px;
+  border: 2px solid gray;
+  outline: none;
+  padding: 0 10px;
+  font-size: 2rem;
+  background-color: transparent;
+}
+header .wrapper_header .header__form .header__form__input:hover {
+  border: none;
+  outline: 5px solid #ff5722;
+}
+header .wrapper_header .header__form .header__form__input:focus {
+  border: none;
+  outline: 5px solid #ff5722;
+  background-color: transparent;
+}
+header .wrapper_header .header__form .header__form__cross {
+  width: 20px;
+  height: 20px;
+  background: url(../svg/cross.svg) center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 50px;
+  cursor: pointer;
+  filter: contrast(0%);
+}
+header .wrapper_header .header__form .header__form__cross:hover {
+  background-image: url(../svg/cross-hover.svg);
+  filter: contrast(100%);
+}
+header .wrapper_header .header__form .display-none {
+  display: none;
+}
+header .wrapper_header .header__form .header__form__button {
+  width: 30px;
+  height: 30px;
+  background: url(../svg/button.svg) center;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 5px;
+  right: 10px;
   cursor: pointer;
 }
-.header__list .header__list__songs .song:hover {
-  font-weight: 700;
+header .wrapper_header .header__form .header__form__button:hover {
+  background-image: url(../svg/button-hover.svg);
 }
-.header__list .header__list__songs .checked_song {
-  font-weight: 700;
+
+.line {
+  width: 100%;
+  height: 5px;
+  background-color: #ff5722;
 }
 
 .player {
@@ -250,9 +292,12 @@ footer {
   color: azure;
   font-size: 1.5rem;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 footer .wrapper_footer {
-  width: 320px;
+  width: 1280px;
   margin: 0 auto;
 }
 footer .wrapper_footer .footer__author {

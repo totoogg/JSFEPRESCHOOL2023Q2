@@ -15,11 +15,12 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  height: 100vh;
-  width: 100%;
-  background-image: url(../posters/rixton.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  backdrop-filter: blur(10px);
+}
+
+@mixin media-tablet {
+  @media (max-width: 1150px) { @content; }
+}
+
+@mixin media-mobile {
+  @media (max-width: 768px) { @content; }
 }

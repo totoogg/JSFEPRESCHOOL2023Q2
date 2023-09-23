@@ -4,10 +4,12 @@ footer {
   color: azure;
   font-size: 1.5rem;
   padding: 10px;
-  
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   .wrapper_footer {
-    width: 320px;
+    width: 1280px;
     margin: 0 auto;
 
     .footer__author {
