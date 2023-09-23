@@ -28,7 +28,14 @@ header .wrapper_header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   width: 1280px;
+}
+@media (max-width: 768px) {
+  header .wrapper_header {
+    justify-content: center;
+    align-content: space-between;
+  }
 }
 header .wrapper_header .header__logo {
   font-size: 4rem;
@@ -100,190 +107,32 @@ header .wrapper_header .header__form .header__form__button:hover {
   background-color: #ff5722;
 }
 
-.player {
-  width: 320px;
-  height: 470px;
-  background: -webkit-linear-gradient(334deg, rgb(40, 40, 40), rgb(219, 52, 52));
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 8px #000000;
-  color: azure;
-  overflow: hidden;
-}
-.player .player__poster {
-  height: 320px;
-  background-image: url(../posters/rixton.jpg);
-  background-size: auto 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.player .player__controls {
-  display: flex;
-  flex-direction: column;
-}
-.player .player__controls .player__controls__content {
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-}
-.player .player__controls .player__controls__content .controls__play {
-  width: 50px;
-  height: 50px;
-  background-image: url(../svg/play.svg);
-  background-size: auto 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.player .player__controls .player__controls__content .controls__play:hover {
-  transform: scale(1.2);
-}
-.player .player__controls .player__controls__content .controls__info {
-  flex-grow: 1;
-  padding: 0 10px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-}
-.player .player__controls .player__controls__content .controls__info .controls__info__author {
-  font-weight: 700;
-  color: aqua;
-  font-size: 2rem;
-}
-.player .player__controls .player__controls__content .controls__info .controls__info__name_song {
-  font-weight: 400;
-  font-size: 1.4rem;
-}
-.player .player__controls .player__controls__content .controls__switching {
-  width: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-.player .player__controls .player__controls__content .controls__switching .controls__switching__next {
-  width: 25px;
-  height: 25px;
-  background-image: url(../svg/next.svg);
-  background-size: auto 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.player .player__controls .player__controls__content .controls__switching .controls__switching__next:hover {
-  transform: scale(1.2);
-}
-.player .player__controls .player__controls__content .controls__switching .controls__switching__prev {
-  width: 25px;
-  height: 25px;
-  background-image: url(../svg/prev.svg);
-  background-size: auto 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.player .player__controls .player__controls__content .controls__switching .controls__switching__prev:hover {
-  transform: scale(1.2);
-}
-.player .player__controls .player__controls__info {
-  height: 80px;
+main {
   width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0 5px;
+  justify-content: center;
 }
-.player .player__controls .player__controls__info .time {
-  flex-grow: 1;
-  padding: 0 5px;
-  font-size: 1.5rem;
-  height: 100%;
+main .wrapper_main {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
+  width: 1280px;
+  padding-bottom: 20px;
 }
-.player .player__controls .player__controls__info .time .time__start {
-  text-align: left;
+main .wrapper_main .main__image {
+  height: 214px;
+  width: 380px;
+  margin-top: 20px;
+  background: url(../photo-1517849845537-4d257902454a.jpg) center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  flex-shrink: 0;
 }
-.player .player__controls .player__controls__info .time input[type=range] {
-  height: 30px;
-  width: 100%;
-  overflow: hidden;
-  color: aqua;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0);
-  -webkit-appearance: none;
-}
-.player .player__controls .player__controls__info .time input[type=range]::-webkit-slider-thumb {
-  width: 10px;
-  -webkit-appearance: none;
-  height: 30px;
-  position: relative;
-  background-color: aqua;
-  box-shadow: calc(-100vmax - 10px) 0 0 100vmax aqua;
-  border-radius: 10px;
-  clip-path: polygon(100% -1px, 0.5px -1px, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 0.5px 100%, 100% 100%);
-}
-.player .player__controls .player__controls__info .time input[type=range]:hover::-webkit-slider-thumb {
-  cursor: pointer;
-}
-.player .player__controls .player__controls__info .time input[type=range]::-webkit-slider-runnable-track {
-  -webkit-appearance: none;
-  height: 30px;
-  position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.5) 0 0) no-repeat center/100% 6px;
-}
-.player .player__controls .player__controls__info .time .time__end {
-  text-align: right;
-  color: aqua;
-}
-.player .player__controls .player__controls__info .sound {
-  cursor: pointer;
-  position: relative;
-  z-index: 2;
-}
-.player .player__controls .player__controls__info .sound .sound__button {
-  width: 25px;
-  height: 25px;
-  background: url(../svg/sound.svg);
-}
-.player .player__controls .player__controls__info .sound input[type=range] {
-  position: absolute;
-  transform: rotate(-90deg);
-  left: 13px;
-  top: -6px;
-  z-index: -1;
-  width: 0px;
-  height: 15px;
-  overflow: hidden;
-  color: aqua;
-  cursor: pointer;
-  background: rgba(255, 255, 255, 0);
-  -webkit-appearance: none;
-}
-.player .player__controls .player__controls__info .sound input[type=range]::-webkit-slider-thumb {
-  width: 5px;
-  -webkit-appearance: none;
-  height: 30px;
-  position: relative;
-  background-color: aqua;
-  box-shadow: calc(-100vmax - 5px) 0 0 100vmax aqua;
-  border-radius: 10px;
-  clip-path: polygon(100% -1px, 0.5px -1px, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 0.5px 100%, 100% 100%);
-}
-.player .player__controls .player__controls__info .sound input[type=range]:hover::-webkit-slider-thumb {
-  cursor: pointer;
-}
-.player .player__controls .player__controls__info .sound input[type=range]::-webkit-slider-runnable-track {
-  -webkit-appearance: none;
-  height: 30px;
-  position: relative;
-  background: linear-gradient(rgba(0, 0, 0, 0.5) 0 0) no-repeat center/100% 5px;
-}
-.player .player__controls .player__controls__info .sound:hover input[type=range] {
-  left: -32px;
-  top: -54px;
-  width: 90px;
+@media (max-width: 768px) {
+  main .wrapper_main .main__image {
+    width: 100%;
+  }
 }
 
 footer {

@@ -18,9 +18,5 @@ body {
 }
 
 @mixin media-tablet {
-  @media (max-width: 1150px) { @content; }
-}
-
-@mixin media-mobile {
   @media (max-width: 768px) { @content; }
 }

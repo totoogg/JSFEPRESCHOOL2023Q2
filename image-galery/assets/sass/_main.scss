@@ -1,216 +1,27 @@
-.player {
-  width: 320px;
-  height: 470px;
-  background: -webkit-linear-gradient(334deg, rgb(40, 40, 40), rgb(219, 52, 52));
-  border-radius: 10px;
+main {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 8px #000000;
-  color: azure;
-  overflow: hidden;
+  align-items: center;
+  justify-content: center;
 
-  .player__poster {
-    height: 320px;
-    background-image: url(../posters/rixton.jpg);
-    background-size: auto 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  .player__controls {
+  .wrapper_main {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 1280px;
+    padding-bottom: 20px;
 
-    .player__controls__content {
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
+    .main__image {
+      height: 214px;
+      width: 380px;
+      margin-top: 20px;
+      background: url(../photo-1517849845537-4d257902454a.jpg) center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
 
-      .controls__play {
-        width: 50px;
-        height: 50px;
-        background-image: url(../svg/play.svg);
-        background-size: auto 100%;
-        background-position: center;
-        background-repeat: no-repeat;
-        cursor: pointer;
-
-        &:hover {
-          transform: scale(1.2);
-        }
-      }
-
-      .controls__info {
-        flex-grow: 1;
-        padding: 0 10px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        .controls__info__author {
-          font-weight: 700;
-          color: aqua;
-          font-size: 2rem;
-        }
-
-        .controls__info__name_song {
-          font-weight: 400;
-          font-size: 1.4rem;
-        }
-      }
-
-      .controls__switching {
-        width: 30px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-
-        .controls__switching__next {
-          width: 25px;
-          height: 25px;
-          background-image: url(../svg/next.svg);
-          background-size: auto 100%;
-          background-position: center;
-          background-repeat: no-repeat;
-          cursor: pointer;
-  
-          &:hover {
-            transform: scale(1.2);
-          }
-        }
-
-        .controls__switching__prev {
-          width: 25px;
-          height: 25px;
-          background-image: url(../svg/prev.svg);
-          background-size: auto 100%;
-          background-position: center;
-          background-repeat: no-repeat;
-          cursor: pointer;
-  
-          &:hover {
-            transform: scale(1.2);
-          }
-        }
-      }
-    }
-
-    .player__controls__info {
-      height: 80px;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 5px;
-
-      .time {
-        flex-grow: 1;
-        padding: 0 5px;
-        font-size: 1.5rem;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-
-        .time__start {
-          text-align: left;
-        }
-    
-        input[type="range"] {
-          height: 30px;
-          width: 100%;
-          overflow: hidden;
-          color: aqua;
-          cursor: pointer;
-          background: #fff0;
-          -webkit-appearance: none;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-          width: 10px;
-          -webkit-appearance: none;
-          height: 30px;
-          position: relative;
-          background-color: aqua;
-          box-shadow: calc(-100vmax - 10px) 0 0 100vmax aqua;
-          border-radius: 10px;
-          clip-path: polygon(100% -1px, 0.5px -1px, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 0.5px 100%, 100% 100%
-          );
-        }
-
-        input[type="range"]:hover::-webkit-slider-thumb {
-          cursor: pointer;
-        }
-
-        input[type="range"]::-webkit-slider-runnable-track {
-          -webkit-appearance: none;
-          height: 30px;
-          position: relative;
-          background: linear-gradient(rgba(0, 0, 0, 0.5) 0 0) no-repeat center / 100% calc(5px + 1px);
-        }
-
-        .time__end {
-          text-align: right;
-          color: aqua;
-        }
-      }
-
-      .sound {
-        cursor: pointer;
-        position: relative;
-        z-index: 2;
-
-        .sound__button {
-          width: 25px;
-          height: 25px;
-          background: url(../svg/sound.svg);
-        }
-
-        input[type="range"] {
-          position: absolute;
-          transform: rotate(-90deg);
-          left: 13px;
-          top: -6px;
-          z-index: -1;
-          width: 0px;
-          height: 15px;
-          overflow: hidden;
-          color: aqua;
-          cursor: pointer;
-          background: #fff0;
-          -webkit-appearance: none;
-        }
-
-        input[type="range"]::-webkit-slider-thumb {
-          width: 5px;
-          -webkit-appearance: none;
-          height: 30px;
-          position: relative;
-          background-color: aqua;
-          box-shadow: calc(-100vmax - 5px) 0 0 100vmax aqua;
-          border-radius: 10px;
-          clip-path: polygon(100% -1px, 0.5px -1px, 0 12px, -100vmax 12px, -100vmax 18px, 0 18px, 0.5px 100%, 100% 100%
-          );
-        }
-
-        input[type="range"]:hover::-webkit-slider-thumb {
-          cursor: pointer;
-        }
-
-        input[type="range"]::-webkit-slider-runnable-track {
-          -webkit-appearance: none;
-          height: 30px;
-          position: relative;
-          background: linear-gradient(rgba(0, 0, 0, 0.5) 0 0) no-repeat center / 100% 5px;
-        }
-
-        &:hover {
-          input[type="range"] {
-            left: -32px;
-            top: -54px;
-            width: 90px;
-          }
-        }
+      @include media-tablet {
+        width: 100%;
       }
     }
   }
