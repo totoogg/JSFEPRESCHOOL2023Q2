@@ -21,6 +21,7 @@ main {
       background-size: cover;
       background-repeat: no-repeat;
       flex-shrink: 0;
+      cursor: pointer;
 
       @include media-tablet {
         width: 100%;

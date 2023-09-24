@@ -136,6 +136,7 @@ main .wrapper_main .main__image {
   background-size: cover;
   background-repeat: no-repeat;
   flex-shrink: 0;
+  cursor: pointer;
 }
 @media (max-width: 768px) {
   main .wrapper_main .main__image {

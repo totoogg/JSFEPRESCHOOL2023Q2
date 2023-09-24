@@ -26,6 +26,9 @@ function createImage(data) {
     let elem = document.createElement('div');
     elem.className = "main__image";
     elem.style.backgroundImage = `url(${a})`
+    elem.addEventListener('dblclick', () => {
+      window.open(a)
+    })
     content.append(elem);
   }
 }
