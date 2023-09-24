@@ -15,14 +15,17 @@ body {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  height: 100vh;
 }
 
 header {
   width: 100%;
   height: 100px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 header .wrapper_header {
   display: flex;
@@ -33,8 +36,9 @@ header .wrapper_header {
 }
 @media (max-width: 768px) {
   header .wrapper_header {
+    height: 100%;
     justify-content: center;
-    align-content: space-between;
+    align-content: space-around;
   }
 }
 header .wrapper_header .header__logo {
@@ -100,11 +104,13 @@ header .wrapper_header .header__form .header__form__button {
 header .wrapper_header .header__form .header__form__button:hover {
   background-image: url(../svg/button-hover.svg);
 }
-
-.line {
+header::after {
+  content: "";
   width: 100%;
   height: 5px;
   background-color: #ff5722;
+  position: absolute;
+  bottom: -10px;
 }
 
 main {
@@ -112,6 +118,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-grow: 2;
 }
 main .wrapper_main {
   display: flex;
@@ -119,6 +126,7 @@ main .wrapper_main {
   justify-content: space-around;
   width: 1280px;
   padding-bottom: 20px;
+  height: 100%;
 }
 main .wrapper_main .main__image {
   height: 214px;
