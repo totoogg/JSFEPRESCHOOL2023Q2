@@ -1,0 +1,31 @@
+main {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 2;
+
+  .wrapper_main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 1280px;
+    padding-bottom: 20px;
+    height: 100%;
+
+    .main__image {
+      height: 214px;
+      width: 380px;
+      margin-top: 20px;
+      background: url(../photo-1517849845537-4d257902454a.jpg) center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      flex-shrink: 0;
+      cursor: pointer;
+
+      @include media-tablet {
+        width: 100%;
+      }
+    }
+  }
+}
