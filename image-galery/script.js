@@ -3,6 +3,17 @@ const button = document.querySelector('.header__form__button');
 const cross = document.querySelector('.header__form__cross');
 const content = document.querySelector('.wrapper_main');
 
+const buttons = document.querySelectorAll('.button');
+
+buttons.forEach(x => {
+  x.addEventListener('click', () => {
+    let images = document.querySelectorAll('.main__image')
+    images.forEach(x => x.remove())
+    let url = `https://api.unsplash.com/search/photos?query=${x.innerHTML}&per_page=30&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+    getData(url)
+  })
+})
+
 button.addEventListener('click', () => {
   event.preventDefault();
   if (search.value) {
