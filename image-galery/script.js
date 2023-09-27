@@ -3,17 +3,31 @@ const button = document.querySelector('.header__form__button');
 const cross = document.querySelector('.header__form__cross');
 const content = document.querySelector('.wrapper_main');
 
+const buttons = document.querySelectorAll('.button');
+
+buttons.forEach(x => {
+  x.addEventListener('click', () => {
+    updateMain()
+    let url = `https://api.unsplash.com/search/photos?query=${x.innerHTML}&per_page=30&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
+    getData(url)
+  })
+})
+
 button.addEventListener('click', () => {
   event.preventDefault();
   if (search.value) {
-    content.innerHTML = '';
+    updateMain()
     let url = `https://api.unsplash.com/search/photos?query=${search.value}&per_page=30&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
     getData(url);
   } else {
-    content.innerHTML = '';
+    updateMain()
   }
 })
 
+function updateMain() {
+  let images = document.querySelectorAll('.main__image')
+    images.forEach(x => x.remove())
+}
 
 async function getData(url) {
   const res = await fetch(url);
