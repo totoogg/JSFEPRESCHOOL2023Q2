@@ -5,8 +5,8 @@ const content = document.querySelector('.wrapper_main');
 
 const buttons = document.querySelectorAll('.button');
 
-buttons.forEach(x => {
-  x.addEventListener('click', () => {
+buttons.forEach(elem => {
+  elem.addEventListener('click', () => {
     updateMain()
     let url = `https://api.unsplash.com/search/photos?query=${x.innerHTML}&per_page=30&client_id=SouHY7Uul-OxoMl3LL3c0NkxUtjIrKwf3tsGk1JaiVo`;
     getData(url)
