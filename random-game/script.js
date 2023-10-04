@@ -114,9 +114,22 @@ let main = [
 let sum = 0
 start()
 
-console.log(main)
+function randomPlace() {
+  let arrFull = main.flat(Infinity)
+  let arrEmptyPlaces = arrFull.map((x, i) => {
+    if (x === 0) return i;
+    return undefined
+  }).filter(x => x !== undefined)
+  let index = arrEmptyPlaces[random(0, arrEmptyPlaces.length - 1)]
 
+  main[Math.floor(index / 4)][index % 4] = randomNumber()
+}
 
+function randomNumber() {
+  let num = random(1, 10)
+  if (num === 10) return 4;
+  return 2
+}
 
 function start() {
   main = [
@@ -147,6 +160,7 @@ function up() {
       }
     }
   }
+  randomPlace()
 }
 
 function down() {
@@ -167,6 +181,7 @@ function down() {
       }
     }
   }
+  randomPlace()
 }
 
 function left() {
@@ -187,6 +202,7 @@ function left() {
       }
     }
   }
+  randomPlace()
 }
 
 function right() {
@@ -207,6 +223,7 @@ function right() {
       }
     }
   }
+  randomPlace()
 }
 
 function random(min, max) {
