@@ -104,18 +104,30 @@
 //   return arr
 // }
 
-const main = [
-  [2, 2, 2, 2],
-  [0, 4, 2, 0],
-  [16, 0, 0, 0],
-  [16, 8, 2, 2]
+let main = [
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0],
+  [0, 0, 0, 0]
 ]
 
 let sum = 0
-
+start()
 
 console.log(main)
-console.log(sum)
+
+
+
+function start() {
+  main = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0]
+  ]
+
+  main[random(0, 3)][random(0, 3)] = 2
+}
 
 function up() {
   for (let i = 0; i < main.length; i++) {
@@ -197,8 +209,7 @@ function right() {
   }
 }
 
-function random(arrLength) {
-  if (arrLength <= 0) return 0
-  let index = 0 + Math.random() * (arrLength + 1 - 0);
+function random(min, max) {
+  let index = min + Math.random() * (max + 1 - min);
   return Math.floor(index);
 }
