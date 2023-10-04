@@ -105,16 +105,35 @@
 // }
 
 const main = [
-  [16, 2, 0, 0],
-  [16, 0, 2, 0],
+  [2, 2, 2, 2],
+  [0, 4, 2, 0],
   [16, 0, 0, 0],
-  [16, 8, 2, 0]
+  [16, 8, 2, 2]
 ]
 
 let sum = 0
 
-up()
-down()
+for (let i = 0; i < main.length; i++) {
+  for (let j = 0; j < main[i].length; j++) {
+    if (main[i][j] !== 0 && j !== 0) {
+      let o = j
+      while (main[i][o - 1] !== undefined && main[i][o - 1] === 0) {
+        main[i][o - 1] = main[i][o]
+        main[i][o] = 0
+        o--
+      }
+      if (main[i][o - 1] !== undefined && main[i][o - 1] === main[i][o]) {
+        sum += main[i][o]
+        main[i][o - 1] += main[i][o]
+        main[i][o] = 0
+      }
+    }
+  }
+}
+
+
+console.log(main)
+console.log(sum)
 
 function up() {
   for (let i = 0; i < main.length; i++) {
@@ -156,9 +175,25 @@ function down() {
   }
 }
 
-
-console.log(main)
-console.log(sum)
+function left() {
+  for (let i = 0; i < main.length; i++) {
+    for (let j = 0; j < main[i].length; j++) {
+      if (main[i][j] !== 0 && j !== 0) {
+        let o = j
+        while (main[i][o - 1] !== undefined && main[i][o - 1] === 0) {
+          main[i][o - 1] = main[i][o]
+          main[i][o] = 0
+          o--
+        }
+        if (main[i][o - 1] !== undefined && main[i][o - 1] === main[i][o]) {
+          sum += main[i][o]
+          main[i][o - 1] += main[i][o]
+          main[i][o] = 0
+        }
+      }
+    }
+  }
+}
 
 function random(arrLength) {
   if (arrLength <= 0) return 0
