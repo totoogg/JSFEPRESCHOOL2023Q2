@@ -113,24 +113,6 @@ const main = [
 
 let sum = 0
 
-for (let i = 0; i < main.length; i++) {
-  for (let j = 0; j < main[i].length; j++) {
-    if (main[i][j] !== 0 && j !== 0) {
-      let o = j
-      while (main[i][o - 1] !== undefined && main[i][o - 1] === 0) {
-        main[i][o - 1] = main[i][o]
-        main[i][o] = 0
-        o--
-      }
-      if (main[i][o - 1] !== undefined && main[i][o - 1] === main[i][o]) {
-        sum += main[i][o]
-        main[i][o - 1] += main[i][o]
-        main[i][o] = 0
-      }
-    }
-  }
-}
-
 
 console.log(main)
 console.log(sum)
@@ -188,6 +170,26 @@ function left() {
         if (main[i][o - 1] !== undefined && main[i][o - 1] === main[i][o]) {
           sum += main[i][o]
           main[i][o - 1] += main[i][o]
+          main[i][o] = 0
+        }
+      }
+    }
+  }
+}
+
+function right() {
+  for (let i = 0; i < main.length; i++) {
+    for (let j = main[i].length - 1; j >= 0; j--) {
+      if (main[i][j] !== 0) {
+        let o = j
+        while (main[i][o + 1] !== undefined && main[i][o + 1] === 0) {
+          main[i][o + 1] = main[i][o]
+          main[i][o] = 0
+          o++
+        }
+        if (main[i][o + 1] !== undefined && main[i][o + 1] === main[i][o]) {
+          sum += main[i][o]
+          main[i][o + 1] += main[i][o]
           main[i][o] = 0
         }
       }
