@@ -143,6 +143,7 @@ function start() {
 }
 
 function up() {
+  let transposition = false;
   for (let i = 0; i < main.length; i++) {
     for (let j = 0; j < main[i].length; j++) {
       if (main[i][j] !== 0 && i !== 0) {
@@ -151,19 +152,22 @@ function up() {
           main[o - 1][j] = main[o][j]
           main[o][j] = 0
           o--
+          transposition = true;
         }
         if (main[o - 1] !== undefined && main[o - 1][j] === main[o][j]) {
           sum += main[o][j]
           main[o - 1][j] += main[o][j]
           main[o][j] = 0
+          transposition = true;
         }
       }
     }
   }
-  randomPlace()
+  if (transposition) randomPlace()
 }
 
 function down() {
+  let transposition = false;
   for (let i = main.length - 1; i >= 0; i--) {
     for (let j = 0; j < main[i].length; j++) {
       if (main[i][j] !== 0) {
@@ -172,19 +176,22 @@ function down() {
           main[o + 1][j] = main[o][j]
           main[o][j] = 0
           o++
+          transposition = true;
         }
         if (main[o + 1] !== undefined && main[o + 1][j] === main[o][j]) {
           sum += main[o][j]
           main[o + 1][j] += main[o][j]
           main[o][j] = 0
+          transposition = true;
         }
       }
     }
   }
-  randomPlace()
+  if (transposition) randomPlace()
 }
 
 function left() {
+  let transposition = false;
   for (let i = 0; i < main.length; i++) {
     for (let j = 0; j < main[i].length; j++) {
       if (main[i][j] !== 0 && j !== 0) {
@@ -193,19 +200,22 @@ function left() {
           main[i][o - 1] = main[i][o]
           main[i][o] = 0
           o--
+          transposition = true;
         }
         if (main[i][o - 1] !== undefined && main[i][o - 1] === main[i][o]) {
           sum += main[i][o]
           main[i][o - 1] += main[i][o]
           main[i][o] = 0
+          transposition = true;
         }
       }
     }
   }
-  randomPlace()
+  if (transposition) randomPlace()
 }
 
 function right() {
+  let transposition = false;
   for (let i = 0; i < main.length; i++) {
     for (let j = main[i].length - 1; j >= 0; j--) {
       if (main[i][j] !== 0) {
@@ -214,16 +224,18 @@ function right() {
           main[i][o + 1] = main[i][o]
           main[i][o] = 0
           o++
+          transposition = true;
         }
         if (main[i][o + 1] !== undefined && main[i][o + 1] === main[i][o]) {
           sum += main[i][o]
           main[i][o + 1] += main[i][o]
           main[i][o] = 0
+          transposition = true;
         }
       }
     }
   }
-  randomPlace()
+  if (transposition) randomPlace()
 }
 
 function random(min, max) {
