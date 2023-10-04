@@ -105,22 +105,27 @@
 // }
 
 const main = [
-  [0, 2, 0, 0],
-  [0, 0, 2, 0],
-  [4, 0, 0, 0],
-  [4, 8, 2, 0]
+  [16, 2, 0, 0],
+  [16, 0, 2, 0],
+  [16, 0, 0, 0],
+  [16, 8, 2, 0]
 ]
 
 let sum = 0
 
-for (let i = 0; i < main.length; i++) {
-  for (let j = 0; j < main[i].length; j++) {
-    if (main[i][j] !== 0 && i !== 0) {
-      let o = i
-      while (main[o - 1] !== undefined && main[o - 1][j] === 0) {
-        main[o - 1][j] = main[o][j]
-        main[o][j] = 0
-        o--
+up()
+down()
+
+function up() {
+  for (let i = 0; i < main.length; i++) {
+    for (let j = 0; j < main[i].length; j++) {
+      if (main[i][j] !== 0 && i !== 0) {
+        let o = i
+        while (main[o - 1] !== undefined && main[o - 1][j] === 0) {
+          main[o - 1][j] = main[o][j]
+          main[o][j] = 0
+          o--
+        }
         if (main[o - 1] !== undefined && main[o - 1][j] === main[o][j]) {
           sum += main[o][j]
           main[o - 1][j] += main[o][j]
@@ -130,6 +135,27 @@ for (let i = 0; i < main.length; i++) {
     }
   }
 }
+
+function down() {
+  for (let i = main.length - 1; i >= 0; i--) {
+    for (let j = 0; j < main[i].length; j++) {
+      if (main[i][j] !== 0) {
+        let o = i
+        while (main[o + 1] !== undefined && main[o + 1][j] === 0) {
+          main[o + 1][j] = main[o][j]
+          main[o][j] = 0
+          o++
+        }
+        if (main[o + 1] !== undefined && main[o + 1][j] === main[o][j]) {
+          sum += main[o][j]
+          main[o + 1][j] += main[o][j]
+          main[o][j] = 0
+        }
+      }
+    }
+  }
+}
+
 
 console.log(main)
 console.log(sum)
