@@ -1,0 +1,110 @@
+main {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(#6d28d9, #000000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .wrapper_main {
+    width: 500px;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: hidden;
+
+    .main__information {
+      padding: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 150px;
+      background: #7dd3fc;
+      border-radius: 20px;
+
+      .information__start {
+        cursor: pointer;
+        background: #fde047;
+        width: 25%;
+        height: 50%;
+        border-radius: 10px;
+        font-size: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+
+        &:hover {
+          background-color: #f472b6;
+          transform: scale(1.1);
+        }
+      }
+
+      .information__sound {
+        width: 65px;
+        height: 50%;
+        border-radius: 10px;
+        cursor: pointer;
+        background: #fde047;
+
+        &:hover {
+          background-color: #f472b6;
+          transform: scale(1.1);
+        }
+      }
+
+      .information__score {
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        font-size: 2rem;
+        
+        .information__score__best {
+          text-align: center;
+          background: #fde047;
+          border-radius: 10px;
+          height: 40%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+
+        .information__score__current {
+          text-align: center;
+          background: #fde047;
+          border-radius: 10px;
+          height: 40%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+        }
+      }
+    }
+
+    .main__field {
+      padding: 10px;
+      background: #7dd3fc;
+      width: 500px;
+      height: 500px;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      border-radius: 20px;
+
+      .game {
+        width: calc(25% - 10px);
+        background-color: #ffffff;
+        height: calc(25% - 10px);
+        border-radius: 20px;
+        font-size: 10rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}
