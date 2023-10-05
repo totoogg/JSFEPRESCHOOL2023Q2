@@ -66,6 +66,7 @@ main .wrapper_main .main__information .information__sound {
   border-radius: 10px;
   cursor: pointer;
   background: #fde047;
+  background-image: url(../svg/sound.svg);
 }
 main .wrapper_main .main__information .information__sound:hover {
   background-color: #f472b6;
