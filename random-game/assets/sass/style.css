@@ -99,6 +99,25 @@ main .wrapper_main .main__information .information__buttons .information__button
   background-color: #f472b6;
   transform: scale(1.1);
 }
+main .wrapper_main .main__information .information__sound_no {
+  width: 65px;
+  height: 50%;
+  border-radius: 10px;
+  cursor: pointer;
+  background: #fde047;
+  background-image: url(../svg/not-sound.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+main .wrapper_main .main__information .information__sound_no:hover {
+  background-color: #f472b6;
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  main .wrapper_main .main__information .information__sound_no {
+    width: 40px;
+  }
+}
 main .wrapper_main .main__information .information__sound {
   width: 65px;
   height: 50%;
@@ -171,10 +190,15 @@ main .wrapper_main .main__field .game {
   background-color: #ffffff;
   height: calc(25% - 10px);
   border-radius: 20px;
-  font-size: 10rem;
+  font-size: 3rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media (max-width: 768px) {
+  main .wrapper_main .main__field .game {
+    font-size: 1.5rem;
+  }
 }
 
 footer {
