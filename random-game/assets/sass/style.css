@@ -20,12 +20,85 @@ body {
 }
 
 main {
+  position: relative;
+  z-index: 1;
   min-height: 95vh;
   width: 100%;
   background: linear-gradient(#6d28d9, #000000);
   display: flex;
   justify-content: center;
   align-items: center;
+}
+main .fon {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+main .top_list {
+  position: absolute;
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 700px;
+  background-color: #7dd3fc;
+  font-size: 5rem;
+  border-radius: 10px;
+}
+@media (max-width: 768px) {
+  main .top_list {
+    width: 300px;
+    height: 500px;
+    font-size: 3rem;
+  }
+}
+main .top_list .cross {
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  z-index: 4;
+  cursor: pointer;
+  display: block;
+}
+main .top_list .cross span {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: #000000;
+}
+main .top_list .cross span:first-child {
+  transform: rotate(-45deg);
+  top: calc(50% - 1px);
+}
+main .top_list .cross span:last-child {
+  bottom: calc(50% - 1px);
+  transform: rotate(45deg);
+}
+main .top_list .top_list__content {
+  display: flex;
+  justify-content: space-around;
+  flex-grow: 1;
+  height: 90%;
+}
+main .top_list .top_list__content .number {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+main .top_list .top_list__content .list_score {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 main .wrapper_main {
   width: 500px;
@@ -199,6 +272,9 @@ main .wrapper_main .main__field .game {
   main .wrapper_main .main__field .game {
     font-size: 1.5rem;
   }
+}
+main .display-none {
+  display: none;
 }
 
 footer {

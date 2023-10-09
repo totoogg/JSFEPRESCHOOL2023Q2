@@ -5,6 +5,12 @@ const scoreCurrent = document.querySelector('.information__score__current__score
 const scoreBest = document.querySelector('.information__score__best__score')
 const newGame = document.querySelector('.information__buttons__start')
 const sound = document.querySelector('.sound')
+const topList = document.querySelectorAll('.score')
+
+const wrapper = document.querySelector('.fon')
+const listTopScore = document.querySelector('.top_list')
+const buttonTop = document.querySelector('.information__buttons__top')
+const buttonCross = document.querySelector('.cross')
 
 let main = [
   [0, 0, 0, 0],
@@ -20,6 +26,21 @@ localSave()
 updateField()
 
 let isSound = true
+
+buttonTop.addEventListener('click', () => {
+  listTopScore.classList.toggle('display-none')
+  wrapper.classList.toggle('display-none')
+})
+
+wrapper.addEventListener('click', () => {
+  listTopScore.classList.toggle('display-none')
+  wrapper.classList.toggle('display-none')
+})
+
+buttonCross.addEventListener('click', () => {
+  listTopScore.classList.toggle('display-none')
+  wrapper.classList.toggle('display-none')
+})
 
 function audioSound() {
   const audio = new Audio()
@@ -154,6 +175,10 @@ function localSave() {
     localStorage.setItem('topScoreGame2048', score.slice(0, 10))
   }
   scoreBest.textContent = localStorage.getItem('topScoreGame2048').split(',')[0]
+  let topScores = localStorage.getItem('topScoreGame2048').split(',')
+  topList.forEach((x, i) => {
+    x.textContent = topScores[i]
+  })
 }
 
 function randomPlace() {
