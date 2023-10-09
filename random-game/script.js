@@ -12,6 +12,12 @@ const listTopScore = document.querySelector('.top_list')
 const buttonTop = document.querySelector('.information__buttons__top')
 const buttonCross = document.querySelector('.cross')
 
+const finished = document.querySelector('.finished')
+const finishedTitle = document.querySelector('.finished__title')
+const finishedText = document.querySelector('.finished__text')
+const buttonStartFinished = document.querySelector('.finished__buttons__start')
+const buttonContinueFinished = document.querySelector('.finished__buttons__continue')
+
 let main = [
   [0, 0, 0, 0],
   [0, 0, 0, 0],
@@ -26,8 +32,15 @@ localSave()
 updateField()
 
 let isSound = true
+let isFinished = true
+
+buttonContinueFinished.addEventListener('click', () => {
+  finished.classList.add('display-none')
+  wrapper.classList.toggle('display-none')
+})
 
 buttonTop.addEventListener('click', () => {
+  localSave()
   listTopScore.classList.toggle('display-none')
   wrapper.classList.toggle('display-none')
 })
@@ -35,6 +48,7 @@ buttonTop.addEventListener('click', () => {
 wrapper.addEventListener('click', () => {
   listTopScore.classList.toggle('display-none')
   wrapper.classList.toggle('display-none')
+  finished.classList.add('display-none')
 })
 
 buttonCross.addEventListener('click', () => {
@@ -78,7 +92,35 @@ document.addEventListener('keyup', e => {
     right()
   }
   updateBest()
+
+  let finish = JSON.parse(JSON.stringify(main)).flat(Infinity).sort((a, b) => b - a)
+
+  if (finish[0] === 2048 && isFinished) {
+    finished.classList.remove('display-none')
+    wrapper.classList.remove('display-none')
+    isFinished = false
+  }
+
+  let checkArr = JSON.parse(JSON.stringify(main)).flat(Infinity)
+  let count = 0
+  checkArr.forEach((x, i) => {
+    if (checkArr[i - 1] === x || checkArr[i + 1] === x || checkArr[i + 4] === x || checkArr[i - 4] === x) count++;
+  })
+
+  if (count === 0) {
+    finishedFail()
+  }
 })
+
+function finishedFail() {
+  finished.classList.remove('display-none')
+  wrapper.classList.remove('display-none')
+
+  finishedTitle.textContent = `Failure`
+  finishedText.textContent = `there are no more possible moves`
+
+  buttonContinueFinished.classList.add('display-none')
+}
 
 document.addEventListener('keydown', e => {
   if (e.key === 'ArrowUp' || e.key === 'w') {
@@ -93,7 +135,7 @@ document.addEventListener('keydown', e => {
 })
 
 newGame.addEventListener('click', () => {
-  let main = [
+  main = [
     [0, 0, 0, 0],
     [0, 0, 0, 0],
     [0, 0, 0, 0],
@@ -106,6 +148,30 @@ newGame.addEventListener('click', () => {
   localSave()
   updateField()
   updateBest()
+
+  isFinished = true
+})
+
+buttonStartFinished.addEventListener('click', () => {
+  main = [
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0],
+    [0, 0, 0, 0]
+  ]
+  
+  sum = 0
+
+  start()
+  localSave()
+  updateField()
+  updateBest()
+
+  isFinished = true
+
+  finished.classList.add('display-none')
+  wrapper.classList.add('display-none')
+  buttonContinueFinished.classList.remove('display-none')
 })
 
 function updateBest() {
