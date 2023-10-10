@@ -282,8 +282,6 @@ function start() {
 }
 
 function checkArr(originArr) {
-  console.log(`originArr`, originArr)
-  console.log(`main`, main)
   return originArr.toString() !== main.toString()
 }
 
@@ -293,6 +291,7 @@ function up() {
     let a = originArr.map(x => x[i]).filter(x => x !== 0)
     let b = a.map((x, i) => {
       if (x === a[i - 1]) {
+        sum += x
         return x * 2
       }
       return x
@@ -348,6 +347,7 @@ function down() {
     let a = originArr.map(x => x[i]).filter(x => x !== 0)
     let b = a.map((x, i) => {
       if (x === a[i - 1]) {
+        sum += x
         return x * 2
       }
       return x
@@ -406,6 +406,7 @@ function left() {
     let a = originArr[i].filter(x => x !== 0)
     let b = a.map((x, i) => {
       if (x === a[i - 1]) {
+        sum += x
         return x * 2
       }
       return x
@@ -463,6 +464,7 @@ function right() {
     let a = originArr[i].filter(x => x !== 0)
     let b = a.map((x, i) => {
       if (x === a[i - 1]) {
+        sum += x
         return x * 2
       }
       return x
