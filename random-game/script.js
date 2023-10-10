@@ -104,20 +104,23 @@ document.addEventListener('keyup', e => {
   let checkArr = JSON.parse(JSON.stringify(main)).flat(Infinity)
   let count = 0
   checkArr.forEach((x, i) => {
-    if (checkArr[i - 1] === x || checkArr[i + 1] === x || checkArr[i + 4] === x || checkArr[i - 4] === x) count++;
+    if (((checkArr[i - 1] === x || checkArr[i + 1] === x) && (i % 4 !== 0 && i % 4 !== 3)) || checkArr[i + 4] === x || checkArr[i - 4] === x) {
+      count++;
+    }
   })
 
-  if (count === 0) {
+  if (count === 0 && checkArr.filter(x => x === 0).length === 0) {
     finishedFail()
   }
 })
 
 function finishedFail() {
+  isSound = false
   finished.classList.remove('display-none')
   wrapper.classList.remove('display-none')
 
   finishedTitle.textContent = `Failure`
-  finishedText.textContent = `there are no more possible moves`
+  finishedText.textContent = `there are no more possible moves. Your score ${sum}`
 
   buttonContinueFinished.classList.add('display-none')
 }
@@ -168,7 +171,7 @@ buttonStartFinished.addEventListener('click', () => {
   updateBest()
 
   isFinished = true
-
+  isSound = true
   finished.classList.add('display-none')
   wrapper.classList.add('display-none')
   buttonContinueFinished.classList.remove('display-none')
@@ -278,7 +281,41 @@ function start() {
   main[random(0, 3)][random(0, 3)] = 2
 }
 
+function checkArr(originArr) {
+  console.log(`originArr`, originArr)
+  console.log(`main`, main)
+  return originArr.toString() !== main.toString()
+}
+
 function up() {
+  let originArr = JSON.parse(JSON.stringify(main))
+  for(let i = 0; i < main.length; i++) {
+    let a = originArr.map(x => x[i]).filter(x => x !== 0)
+    let b = a.map((x, i) => {
+      if (x === a[i - 1]) {
+        return x * 2
+      }
+      return x
+    })
+    let c = []
+    b.forEach((x, i) => {
+      if (x !== a[i]) {
+        c.push(x)
+      } else if (x !== a[i + 1]) {
+        c.push(x)
+      }
+    })
+    if (c.length < 4) c.push(Array(4 - c.length).fill(0))
+    let t = c.flat(Infinity)
+    for (let j = 0; j < main.length; j++) {
+      main[j][i] = t[j]
+    }
+    updateField()
+  }
+  if (checkArr(originArr)) randomPlace()
+}
+
+/* function up() {
   let transposition = false;
   for (let i = 0; i < main.length; i++) {
     for (let j = 0; j < main[i].length; j++) {
@@ -291,6 +328,7 @@ function up() {
           transposition = true;
           updateField()
         }
+        console.log(main[i][j])
         if (main[o - 1] !== undefined && main[o - 1][j] === main[o][j]) {
           sum += main[o][j]
           main[o - 1][j] += main[o][j]
@@ -302,9 +340,41 @@ function up() {
     }
   }
   if (transposition) randomPlace()
-}
+} */
 
 function down() {
+  let originArr = JSON.parse(JSON.stringify(main))
+  for(let i = 0; i < main.length; i++) {
+    let a = originArr.map(x => x[i]).filter(x => x !== 0)
+    let b = a.map((x, i) => {
+      if (x === a[i - 1]) {
+        return x * 2
+      }
+      return x
+    })
+    let c = []
+    b.forEach((x, i) => {
+      if (x !== a[i]) {
+        c.push(x)
+      } else if (x !== a[i + 1]) {
+        c.push(x)
+      }
+    })
+    let y = []
+    if (c.length < 4) {
+      y = Array(4 - c.length).fill(0)
+    }
+    y.push(c)
+    let t = y.flat(Infinity)
+    for (let j = 0; j < main.length; j++) {
+      main[j][i] = t[j]
+    }
+    updateField()
+  }
+  if (checkArr(originArr)) randomPlace()
+}
+
+/* function down() {
   let transposition = false;
   for (let i = main.length - 1; i >= 0; i--) {
     for (let j = 0; j < main[i].length; j++) {
@@ -328,9 +398,40 @@ function down() {
     }
   }
   if (transposition) randomPlace()
-}
+} */
 
 function left() {
+  let originArr = JSON.parse(JSON.stringify(main))
+  for(let i = 0; i < main.length; i++) {
+    let a = originArr[i].filter(x => x !== 0)
+    let b = a.map((x, i) => {
+      if (x === a[i - 1]) {
+        return x * 2
+      }
+      return x
+    })
+    let c = []
+    b.forEach((x, i) => {
+      if (x !== a[i]) {
+        c.push(x)
+      } else if (x !== a[i + 1]) {
+        c.push(x)
+      }
+    })
+
+    if (c.length < 4) {
+      c.push(Array(4 - c.length).fill(0))
+    }
+    let t = c.flat(Infinity)
+    for (let j = 0; j < main.length; j++) {
+      main[i][j] = t[j]
+    }
+    updateField()
+  }
+  if (checkArr(originArr)) randomPlace()
+}
+
+/* function left() {
   let transposition = false;
   for (let i = 0; i < main.length; i++) {
     for (let j = 0; j < main[i].length; j++) {
@@ -354,9 +455,41 @@ function left() {
     }
   }
   if (transposition) randomPlace()
-}
+} */
 
 function right() {
+  let originArr = JSON.parse(JSON.stringify(main))
+  for(let i = 0; i < main.length; i++) {
+    let a = originArr[i].filter(x => x !== 0)
+    let b = a.map((x, i) => {
+      if (x === a[i - 1]) {
+        return x * 2
+      }
+      return x
+    })
+    let c = []
+    b.forEach((x, i) => {
+      if (x !== a[i]) {
+        c.push(x)
+      } else if (x !== a[i + 1]) {
+        c.push(x)
+      }
+    })
+    let y = []
+    if (c.length < 4) {
+      y = Array(4 - c.length).fill(0)
+    }
+    y.push(c)
+    let t = y.flat(Infinity)
+    for (let j = 0; j < main.length; j++) {
+      main[i][j] = t[j]
+    }
+    updateField()
+  }
+  if (checkArr(originArr)) randomPlace()
+}
+
+/* function right() {
   let transposition = false;
   for (let i = 0; i < main.length; i++) {
     for (let j = main[i].length - 1; j >= 0; j--) {
@@ -380,7 +513,7 @@ function right() {
     }
   }
   if (transposition) randomPlace()
-}
+} */
 
 function random(min, max) {
   let index = min + Math.random() * (max + 1 - min);
