@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all .3s ease-out;
+  font-family: 'Montserrat', sans-serif;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+}
+
+@mixin media-tablet {
+  @media (max-width: 768px) { @content; }
+}
