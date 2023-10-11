@@ -1,5 +1,7 @@
 const body = document.querySelector('body')
 
+
+const mainField = document.querySelector('.main__field')
 const field = document.querySelectorAll('.game')
 const scoreCurrent = document.querySelector('.information__score__current__score')
 const scoreBest = document.querySelector('.information__score__best__score')
@@ -33,6 +35,65 @@ updateField()
 
 let isSound = true
 let isFinished = true
+
+let cordX = 0
+let cordY = 0
+
+mainField.addEventListener('mouseup', (e) => {
+  e.preventDefault()
+  if (e.button === 0) {
+    let cordUpX = cordX - e.clientX
+    let cordUpY = cordY - e.clientY
+
+    let max = Math.max(Math.abs(cordUpX), Math.abs(cordUpY))
+
+    let direction = 0
+
+    if (max === (Math.abs(cordUpX))) {
+      if (String(cordUpX)[0] === '-') {
+        right()
+      } else {
+        left()
+      }
+    } else {
+      if (String(cordUpY)[0] === '-') {
+        down()
+      } else {
+        up()
+      }
+    }
+
+    updateBest()
+
+    let finish = JSON.parse(JSON.stringify(main)).flat(Infinity).sort((a, b) => b - a)
+
+    if (finish[0] === 2048 && isFinished) {
+      finished.classList.remove('display-none')
+      wrapper.classList.remove('display-none')
+      isFinished = false
+    }
+
+    let checkArr = JSON.parse(JSON.stringify(main)).flat(Infinity)
+    let count = 0
+    checkArr.forEach((x, i) => {
+      if (((checkArr[i - 1] === x || checkArr[i + 1] === x) && (i % 4 !== 0 && i % 4 !== 3)) || checkArr[i + 4] === x || checkArr[i - 4] === x) {
+        count++;
+      }
+    })
+
+    if (count === 0 && checkArr.filter(x => x === 0).length === 0) {
+      finishedFail()
+    }
+  }
+})
+
+mainField.addEventListener('mousedown', (e) => {
+  e.preventDefault()
+  if (e.button === 0) {
+    cordX = e.clientX
+    cordY = e.clientY
+  }
+})
 
 buttonContinueFinished.addEventListener('click', () => {
   finished.classList.add('display-none')
