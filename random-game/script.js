@@ -350,12 +350,14 @@ function up() {
   let originArr = JSON.parse(JSON.stringify(main))
   for(let i = 0; i < main.length; i++) {
     let a = originArr.map(x => x[i]).filter(x => x !== 0)
-    let b = a.map((x, i) => {
-      if (x === a[i - 1]) {
+    let b = []
+    a.forEach((x, i) => {
+      if (x === a[i - 1] && x !== b[i - 2]) {
         sum += x
-        return x * 2
+        b.push(x * 2)
+      } else {
+        b.push(x)
       }
-      return x
     })
     let c = []
     b.forEach((x, i) => {
@@ -406,12 +408,15 @@ function down() {
   let originArr = JSON.parse(JSON.stringify(main))
   for(let i = 0; i < main.length; i++) {
     let a = originArr.map(x => x[i]).filter(x => x !== 0)
-    let b = a.map((x, i) => {
-      if (x === a[i - 1]) {
+    let b = []
+    a.reverse()
+    a.forEach((x, i) => {
+      if (x === a[i - 1] && x !== b[i - 2]) {
         sum += x
-        return x * 2
+        b.push(x * 2)
+      } else {
+        b.push(x)
       }
-      return x
     })
     let c = []
     b.forEach((x, i) => {
@@ -421,6 +426,7 @@ function down() {
         c.push(x)
       }
     })
+    c.reverse()
     let y = []
     if (c.length < 4) {
       y = Array(4 - c.length).fill(0)
@@ -465,12 +471,14 @@ function left() {
   let originArr = JSON.parse(JSON.stringify(main))
   for(let i = 0; i < main.length; i++) {
     let a = originArr[i].filter(x => x !== 0)
-    let b = a.map((x, i) => {
-      if (x === a[i - 1]) {
+    let b = []
+    a.forEach((x, i) => {
+      if (x === a[i - 1] && x !== b[i - 2]) {
         sum += x
-        return x * 2
+        b.push(x * 2)
+      } else {
+        b.push(x)
       }
-      return x
     })
     let c = []
     b.forEach((x, i) => {
@@ -523,12 +531,15 @@ function right() {
   let originArr = JSON.parse(JSON.stringify(main))
   for(let i = 0; i < main.length; i++) {
     let a = originArr[i].filter(x => x !== 0)
-    let b = a.map((x, i) => {
-      if (x === a[i - 1]) {
+    let b = []
+    a.reverse()
+    a.forEach((x, i) => {
+      if (x === a[i - 1] && x !== b[i - 2]) {
         sum += x
-        return x * 2
+        b.push(x * 2)
+      } else {
+        b.push(x)
       }
-      return x
     })
     let c = []
     b.forEach((x, i) => {
@@ -538,6 +549,7 @@ function right() {
         c.push(x)
       }
     })
+    c.reverse()
     let y = []
     if (c.length < 4) {
       y = Array(4 - c.length).fill(0)
